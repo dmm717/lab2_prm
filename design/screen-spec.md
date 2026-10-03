@@ -1,0 +1,10 @@
+# Screen Specifications (Đặc tả 8 màn hình)
+
+1. **Màn hình Home:** Màn hình chính cấp 1. Hiển thị số dư và các giao dịch gần nhất. (Dùng trong Flow 1, 2, 3)
+2. **Màn hình Thêm chi tiêu:** Màn hình cấp 2. Nhập số tiền, ngày tháng, ghi chú. (Dùng trong Flow 1)
+3. **Màn hình Chọn Danh mục (Full-screen):** Màn hình cấp 3. Hiển thị danh sách các icon danh mục (Ăn uống, Di chuyển, Mua sắm...) để user chọn. (Dùng trong Flow 1)
+4. **Màn hình Thống kê:** Màn hình cấp 1. Chứa biểu đồ Pie chart thể hiện tỷ trọng chi tiêu. (Dùng trong Flow 2)
+5. **Màn hình Danh sách Giao dịch chi tiết:** Màn hình cấp 2. Hiển thị toàn bộ lịch sử chi tiêu, có bộ lọc theo thời gian/danh mục. (Dùng trong Flow 2)
+6. **Màn hình Danh sách Chia tiền (Split Bill):** Màn hình cấp 1. Quản lý tổng quan các hóa đơn nợ chung. (Dùng trong Flow 3)
+7. **Màn hình Tạo hóa đơn chia tiền:** Màn hình cấp 2. Form để nhập số tiền tổng và chọn bạn bè cùng chia. (Dùng trong Flow 3)
+8. **Màn hình Chi tiết hóa đơn:** Màn hình cấp 3. Xem lại hóa đơn đã tạo, xem ai đã trả tiền, ai chưa trả và nút bấm gửi tin nhắn đòi nợ. (Dùng trong Flow 3)
