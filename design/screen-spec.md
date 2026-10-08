@@ -1,10 +1,22 @@
-# Screen Specifications (Đặc tả 8 màn hình)
+# Đặc tả 8 màn hình cuối
 
-1. **Màn hình Home:** Màn hình chính cấp 1. Hiển thị số dư và các giao dịch gần nhất. (Dùng trong Flow 1, 2, 3)
-2. **Màn hình Thêm chi tiêu:** Màn hình cấp 2. Nhập số tiền, ngày tháng, ghi chú. (Dùng trong Flow 1)
-3. **Màn hình Chọn Danh mục (Full-screen):** Màn hình cấp 3. Hiển thị danh sách các icon danh mục (Ăn uống, Di chuyển, Mua sắm...) để user chọn. (Dùng trong Flow 1)
-4. **Màn hình Thống kê:** Màn hình cấp 1. Chứa biểu đồ Pie chart thể hiện tỷ trọng chi tiêu. (Dùng trong Flow 2)
-5. **Màn hình Danh sách Giao dịch chi tiết:** Màn hình cấp 2. Hiển thị toàn bộ lịch sử chi tiêu, có bộ lọc theo thời gian/danh mục. (Dùng trong Flow 2)
-6. **Màn hình Danh sách Chia tiền (Split Bill):** Màn hình cấp 1. Quản lý tổng quan các hóa đơn nợ chung. (Dùng trong Flow 3)
-7. **Màn hình Tạo hóa đơn chia tiền:** Màn hình cấp 2. Form để nhập số tiền tổng và chọn bạn bè cùng chia. (Dùng trong Flow 3)
-8. **Màn hình Chi tiết hóa đơn:** Màn hình cấp 3. Xem lại hóa đơn đã tạo, xem ai đã trả tiền, ai chưa trả và nút bấm gửi tin nhắn đòi nợ. (Dùng trong Flow 3)
+Bộ `Lab2 /` tại page `03. Final UI`, 360×800. Tên và số màn hình dùng nhất quán ở handoff.
+
+| # | Frame | Mục đích, dữ liệu demo | Điều hướng |
+|---|---|---|---|
+| 01 | Home | Còn 1.250.000đ trong ngân sách 2 triệu; 3 giao dịch gần nhất | Add → 02; tabs → 04/06 |
+| 02 | Add expense | Số tiền, danh mục Ăn uống mặc định, hôm nay, ghi chú tùy chọn | Category → 03; Save → loading → 01; lỗi → Retry |
+| 03 | Category | Lưới 9 danh mục; chạm chọn cập nhật biến danh mục | Chọn/Xong/Back → 02 |
+| 04 | Analytics | 750.000đ; donut 45/40/15%; danh sách có nhãn và số tiền | Mảng màu/dòng danh mục → 05 đã lọc |
+| 05 | Transactions | Nhóm giao dịch tháng 10 theo danh mục, tổng và ngày | Back → 04 |
+| 06 | Split bills | Mọi người nợ bạn 200.000đ; danh sách hóa đơn | Tạo → 07; hóa đơn → 08 |
+| 07 | Create bill | Đi siêu thị 300.000đ; Quân, Tuấn, Linh; mỗi người 100.000đ | Confirm → loading → 08; thêm An → chia 4 |
+| 08 | Bill detail | Ai đã trả/chưa trả; tiền còn cần thu; nhắc thanh toán | Back → 06; Remind → bản xem trước |
+
+## Trạng thái ngoài 8 màn hình chính
+
+Page `06. Prototype` có thêm form rỗng, form nhập chữ, hộp lỗi, loading/spinning, Home cập nhật số dư, lịch sử Nhà trọ/Di chuyển, nhóm 4 người và bản xem trước nhắc thanh toán. 3 starting points tương ứng 3 user flows.
+
+## Giới hạn prototype
+
+Nút preset mô phỏng nhập 30.000đ, `Thử nhập bằng chữ` mô phỏng giá trị `ba mươi nghìn`; Figma không nhận bàn phím nhập tự do ở bản này. Ngày, ghi chú và danh sách bạn là dữ liệu mẫu. Trong Flutter, đây phải là form thực có validation. Checkbox minh họa nhóm chọn sẵn; chưa mô phỏng mọi tổ hợp thành viên. Nhắc thanh toán chỉ mở xem trước, không gửi tin nhắn.

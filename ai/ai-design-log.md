@@ -52,7 +52,7 @@ Sau khi có 8 màn hình thực tế từ v0.dev, tôi đã yêu cầu ChatGPT �
 - **Prompt gửi ChatGPT:**
   > "Act as an expert UX Designer. I am designing an Expense Tracker app named 'StudentPay' for Minh Quân (a 20-year-old college student who needs to split bills and track expenses quickly). Please review my 8 generated UI screens against Nielsen's 10 Usability Heuristics and basic accessibility rules. Provide exactly 5 specific heuristic violations or UX issues tied to specific screens."
 
-- **Câu trả lời nguyên văn của ChatGPT:**
+- **Nội dung phản biện mẫu được ghi trong tài liệu ban đầu (chưa xác minh bản ghi ChatGPT):**
   > "Here are 5 UX issues based on Nielsen's heuristics for the StudentPay app:
   > 1. (Consistency and standards): Screen 6 has both a Back arrow and a Close 'x' button, causing redundancy.
   > 2. (Visibility of system status): Screen 3 lacks a success state or toast after sending a split request.
@@ -107,3 +107,23 @@ Ngoài 5 lỗi ở trên sẽ được sửa thủ công khi chuyển sang Figma
   - Trước: (![Trước](../assets/stitch/8.png))
   - Sau: (![Refine 3](../assets/stitch/ui_v4.png))
   - *Ghi chú:* Trạng thái trống (Empty State) đã được thêm vào với hình ảnh minh họa đáng yêu và nút kêu gọi hành động (CTA) rõ ràng. Giờ đây khi người dùng mới chưa có dữ liệu, app trông vẫn rất sinh động và biết cách "dẫn đường" thay vì như bị lỗi văng màn hình trắng.
+
+
+## 4. Bổ sung thực tế bằng Codex — 04/10/2026
+
+- Người dùng cung cấp MSSV SE192336, Huỳnh Thiện Nhân, [file Figma](https://www.figma.com/design/C7FiWYzVXUS8G2cnK5AGos/PRM393-Lab2-SE192382_SE192336) và [project Stitch](https://stitch.withgoogle.com/projects/15153031226902677174).
+- Audit Figma ban đầu: 8 wireframes; components có sẵn; 3 final screens 390×844; prototype trống; không có local collections/styles được liệt kê.
+- Codex dựng 8 final screens 360×800 bằng text/vector/components chỉnh sửa được, không import ảnh AI làm Final UI.
+- Bổ sung 2 collections foundations, 39 design variables và 6 Inter text styles; thêm biến chọn danh mục và metadata giao dịch mới cho prototype.
+- Bổ sung component states, error dialog, spinner và 3 prototype starting points. Sửa lỗi Auto Layout chiều cao hàng ngang, chữ số/nhãn nút tràn và bộ lọc sai dữ liệu.
+- Ảnh export, node IDs và audit lưu trong `assets/figma/`, `design/figma-build-state.json`, `design/figma-prototype-audit.json`.
+- Độ tương phản được tính bằng script, chưa chạy plugin Contrast. Các prompt, đoạn “nguyên văn GPT-4o” và nguồn v0 trong log trước là tài liệu có sẵn; lượt này không xác minh lại lịch sử chat hoặc phiên generate.
+- `ui_v2.png`, `ui_v3.png`, `ui_v4.png` được giữ nguyên làm bằng chứng refine đã có, không tạo ảnh giả cho các lượt trước.
+
+## Refinement theo phản hồi người dùng — 04/10/2026
+
+Tái sử dụng thư viện StudentPay trên 05. Components; status iOS và tab bar lấy mẫu Final UI Overview. Cân lại width 324px, display 28px, header 24/20px, body/button 16px, member 15px và caption 14px. Màn form/chi tiết chỉ có thanh vuốt iOS. Tab bar giữ đúng Home/Groups/Activity/You (label 11px như mẫu), You mở thông tin sinh viên. Audit cuối: 28 prototype frames, 79 navigation reactions, 3 starting points, không ghi nhận content overflow. Ledger: design/figma-ui-refinement.json.
+
+### Motion và fixed header — 04/10/2026
+
+Dùng figma-use và figma-use-motion để thêm pressed state 100ms từ Components gốc, chuyển tab/trang, hộp thoại từ dưới, donut entrance và spinner. Status/header/footer cố định; Content cuộn riêng. Kiểm thử Present với bản Home dài tạm: danh sách cuộn, header và tab bar giữ vị trí; bản tạm đã xóa. Phát hiện frame Tạo hóa đơn bị ẩn và khôi phục visibility, thử lại Groups → Tạo → loading → Chi tiết thành công. Audit mới: 29 prototype frames, 89 navigation reactions, 27 press interactions, 3 starting points, không có issues. Ledger: design/figma-motion-state.json.

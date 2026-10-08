@@ -1,13 +1,23 @@
-# Flutter Handoff (Đặc tả cho Lập trình viên)
+# Flutter Handoff — StudentPay
+
+Đặc tả triển khai tương lai, không phải báo cáo tính năng Flutter đã chạy. Bản final mới dùng `design/DESIGN.md`, node IDs trong `design/figma-build-state.json`. Các tokens cũ Color/Primary… dưới đây ánh xạ lần lượt sang color/primary, color/danger, color/surface; Typography sang StudentPay/Display, StudentPay/Body; Spacing sang spacing/16, spacing/8.
+
+- Tiền VND, số nguyên >0. Từ chối chuỗi, rỗng, số âm và 0; kiểm tra cả paste dù bàn phím số. Lưu dạng integer, chỉ format dấu chấm ở UI.
+- Thêm nhanh mặc định Ăn uống và hôm nay; dùng preset 30.000đ nếu muốn luồng 3 lần chạm.
+- Ngân sách demo: 2 triệu; số dư trước/sau khoản chi: 1.250.000/1.220.000đ.
+- Chia đều 300.000đ cho 3 người tính cả người trả trước: 100.000đ/người; 4 người: 75.000đ/người. Với số không chia hết, phân phối phần dư 1đ theo thứ tự thành viên ổn định để tổng khớp hóa đơn.
+- Component mới: Button states Default/Pressed/Disabled/Loading; Amount Default/Filled/Error; Bottom nav Home/Analytics/Split; Feedback Error/Loading/Success/Empty; Error dialog và Spinner.
+- Chỉ prototype kịch bản đã dựng; backend, nhập tự do, gửi yêu cầu thật và responsive 412px chưa triển khai.
+
 
 ## 1. Bảng ánh xạ Token sang Flutter (Design Tokens to Code)
 | Figma Token | Figma Value | Flutter Code (Dự kiến) |
 | :--- | :--- | :--- |
-| **Color/Primary** | `#4CAF50` (Emerald Green) | `Theme.of(context).colorScheme.primary` |
-| **Color/Danger** | `#F44336` (Red) | `Theme.of(context).colorScheme.error` |
-| **Color/Background**| `#FFFFFF` (White) | `Theme.of(context).colorScheme.background` |
-| **Typography/Header**| Roboto, 32sp, Bold | `Theme.of(context).textTheme.displayLarge` |
-| **Typography/Body** | Roboto, 16sp, Regular | `Theme.of(context).textTheme.bodyLarge` |
+| **Color/Primary** | `#006C49` (Accessible Green) | `Theme.of(context).colorScheme.primary` |
+| **Color/Danger** | `#BA1A1A` (Red) | `Theme.of(context).colorScheme.error` |
+| **Color/Background**| `#FFFFFF` (White) | `Theme.of(context).colorScheme.surface` |
+| **Typography/Header**| Inter, 32sp, Bold | `Theme.of(context).textTheme.displayLarge` |
+| **Typography/Body** | Inter, 16sp, Regular | `Theme.of(context).textTheme.bodyLarge` |
 | **Spacing/Medium** | 16px | `const SizedBox(height: 16)` hoặc `padding: EdgeInsets.all(16)` |
 | **Spacing/Small** | 8px | `const SizedBox(height: 8)` |
 
@@ -42,9 +52,9 @@
 ### Màn hình 3: Chọn Danh mục (Full screen)
 1. **Layout:** `Scaffold` -> `AppBar` -> `GridView.count` (scrollable). Khoảng cách grid dùng **Spacing/Small** (8px).
 2. **Components:** Khối Icon tùy chỉnh bọc trong `InkWell` (variant có hiệu ứng ripple).
-3. **States:** `populated` (hiển thị sẵn 12 danh mục cố định).
+3. **States:** `populated` (hiển thị 9 danh mục trong bản final).
 4. **User interactions:** Chạm (tap) vào 1 icon danh mục bất kỳ.
-5. **Navigation:** Đến từ: Màn hình 2. Chạm icon hoặc nhấn Back (chữ X) -> Trở về Màn hình 2 (mang theo dữ liệu đã chọn).
+5. **Navigation:** Đến từ: Màn hình 2. Chạm icon hoặc nhấn Back (mũi tên) -> Trở về Màn hình 2 (mang theo dữ liệu đã chọn).
 6. **Important UI constraints:** Hành vi trên màn rộng (Tablet): `GridView` chuyển từ 3 cột (crossAxisCount: 3) sang 5 hoặc 6 cột. Vùng chạm mỗi icon đảm bảo > 48x48dp.
 
 ### Màn hình 4: Thống kê (Analytics)
@@ -76,7 +86,7 @@
 2. **Components:** `TextFormField` (Tổng tiền), `CheckboxListTile` (Chọn bạn), `FilledButton.icon` (Xác nhận).
 3. **States:** `default` (khởi tạo), `error` (vi phạm nhập liệu), `loading` (đang lưu).
 4. **User interactions:** Nhập số tiền -> Bàn phím số. Chạm ô Checkbox -> Tự động chia lại tiền trên màn hình (validation: Phải chọn ít nhất 1 người).
-5. **Navigation:** Đến từ: Màn hình 6. Bấm Xác nhận (thành công) hoặc Back -> Về Màn hình 6.
+5. **Navigation:** Đến từ: Màn hình 6. Bấm Xác nhận thành công -> Màn hình 8; Back -> Màn hình 6.
 6. **Important UI constraints:** Vùng chạm của checkbox mở rộng ra toàn bộ dòng (tap toàn dòng đều ăn checkbox). Bàn phím số không được che mất nút Xác nhận ở cuối.
 
 ### Màn hình 8: Chi tiết hóa đơn

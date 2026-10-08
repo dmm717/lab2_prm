@@ -1,33 +1,51 @@
-# PRM323 Lab 2 - UI/UX Design with AI (Expense Tracker)
+# PRM323 Lab 2 — StudentPay
 
-## Thông tin sinh viên
-- **Mã số sinh viên:** `<Điền mã số của bạn>`
-- **Họ và tên:** `<Điền tên của bạn>`
+**Sinh viên:** SE192336 — Huỳnh Thiện Nhân. File Figma nhóm được giữ nguyên tên `PRM393-Lab2-SE192382_SE192336`; tài liệu lab hiện dùng PRM323 theo checklist gốc.
 
-## Đề tài thiết kế
-**Ứng dụng theo dõi thu chi (Expense Tracker)** dành cho sinh viên đại học ở trọ, có ngân sách eo hẹp và cần tính năng chia tiền (split bill) nhanh gọn với bạn cùng phòng.
-- **Persona tóm tắt:** Sinh viên năm 2 ở trọ, thường xuyên đi ăn chung, hay cháy túi cuối tháng do lười ghi chép vì các app hiện tại quá phức tạp.
+StudentPay là bản thiết kế ứng dụng quản lý chi tiêu và chia hóa đơn cho sinh viên ở trọ. Repo này chứa bài UI/UX và handoff Flutter; chưa có mã ứng dụng Flutter/Android để compile APK.
 
-## Figma
-👉 **[Link Figma của dự án tại đây]** *(Vui lòng thay thế đoạn này bằng link Figma của bạn, đảm bảo quyền "Anyone with the link can view")*.
+## Thiết kế và prototype
 
-## Danh sách công cụ AI đã dùng
-1. **Google Stitch:** Dùng để Generate (Tạo) UI các màn hình ở phiên bản ban đầu (v1, v2, v3). Ảnh chụp lưu tại thư mục `assets/stitch`.
-2. **ChatGPT (GPT-4o):** Dùng để Critique (Phản biện) thiết kế theo 10 heuristic của Nielsen và các nguyên tắc Accessibility. Log chi tiết lưu tại `ai/ai-design-log.md`.
+- [Figma — file thiết kế](https://www.figma.com/design/C7FiWYzVXUS8G2cnK5AGos/PRM393-Lab2-SE192382_SE192336)
+- [Prototype — bắt đầu tại Home](https://www.figma.com/proto/C7FiWYzVXUS8G2cnK5AGos/PRM393-Lab2-SE192382_SE192336?page-id=1%3A6&node-id=65-2&starting-point-node-id=65%3A2)
+- [Google Stitch — project tham chiếu](https://stitch.withgoogle.com/projects/15153031226902677174)
 
-## Bản đồ thư mục (Directory Map)
-- `README.md`: Giới thiệu dự án, Link Figma.
-- `ux/`
-  - `persona.md`: Chân dung khách hàng, vấn đề, tiêu chí thành công.
-  - `user-flow.md`: Kiến trúc thông tin và 3 luồng ứng dụng chi tiết.
-- `design/`
-  - `DESIGN.md`: Bản mô tả thiết kế (quy tắc màu sắc, font chữ).
-  - `screen-spec.md`: Ý đồ thiết kế của từng màn hình.
-  - `design-decisions.md`: Top 10 quyết định thiết kế chốt hạ và Checklist Accessibility.
-- `ai/`
-  - `ai-design-log.md`: Nhật ký làm việc với AI (Prompt, Phản biện, Quyết định).
-- `handoff/`
-  - `flutter-handoff.md`: Đặc tả chi tiết để bàn giao cho lập trình viên Flutter code.
-- `assets/`
-  - `stitch/`: Thư mục chứa ảnh chụp Google Stitch.
-  - `figma/`: Thư mục chứa ảnh chụp xuất từ Figma.
+File Figma có 6 pages: User Flow, Wireframe, Final UI, Design System, Components và Prototype. Bộ final mới có tiền tố `Lab2 /`, gồm 8 màn hình **360 × 800**, chữ tiếng Việt, tiền VND và component instances. Các thiết kế cũ được giữ lại. Prototype có 3 flow starting points, error dialog, loading spinner và các trạng thái bổ sung. Các flow dùng dữ liệu mẫu độc lập; thay đổi trong một kịch bản không đồng bộ toàn bộ báo cáo. Dữ liệu nhập được mô phỏng bằng nút chọn nhanh; đây là prototype kịch bản, chưa phải ứng dụng nhập liệu tự do.
+
+## Cách chạy thử
+
+1. Thêm chi tiêu: **Thêm chi tiêu → 30.000 đ → Lưu chi tiêu**. Sau loading, số dư đổi từ 1.250.000 đ thành 1.220.000 đ.
+2. Nhánh lỗi: **Thử nhập bằng chữ → Lưu → Nhập lại số tiền**. Lưu khi số tiền trống cũng mở hộp lỗi.
+3. Thống kê: chuyển tab **Activity** (Thống kê), chạm mảng biểu đồ hoặc dòng danh mục để xem lịch sử tương ứng.
+4. Chia hóa đơn: **Chia tiền → Tạo hóa đơn → Tạo hóa đơn chia tiền**, xem mỗi người trả 100.000 đ. Nhánh **Thêm bạn mới** minh họa An tham gia, chia 4 người với 75.000 đ/người.
+
+Nếu trình xem Figma hiển thị ở kích thước thực và che phần đáy, chọn chế độ fit để thấy đủ màn hình 360 × 800.
+
+## Công cụ và bằng chứng
+
+- Google Stitch/v0: log và ảnh tham chiếu có sẵn trong `ai/ai-design-log.md`, `assets/stitch/`; nguồn từng ảnh theo log cũ, chưa xác thực lại từng lần generate.
+- ChatGPT: phần phản biện trong log ban đầu. Thông tin model GPT-4o là ghi nhận từ tài liệu cũ, không được xác minh lại trong lượt bổ sung.
+- Codex + Figma Plugin API: bổ sung Variables, Text Styles, components, Final UI và prototype ngày 04/10/2026. Script dựng nằm trong `scripts/figma/`; node IDs và kiểm tra cấu trúc nằm trong `design/figma-build-state.json` và `design/figma-prototype-audit.json`.
+- Ảnh xuất trực tiếp từ Figma: `assets/figma/`, đối chiếu node nguồn bằng `manifest.json`.
+
+## Bản đồ bài nộp
+
+| Thư mục | Nội dung |
+|---|---|
+| `ux/` | Persona, 3 user flows và ánh xạ màn hình |
+| `design/` | Quy tắc thiết kế cuối, screen spec, 10 quyết định, audit |
+| `ai/` | Prompt, critique, refinement và log bổ sung thực tế |
+| `handoff/` | Handoff Flutter, hướng dẫn prototype, tình trạng nộp bài |
+| `assets/stitch/` | 8 ảnh ban đầu, 3 ảnh phiên bản refine có sẵn |
+| `assets/figma/` | 8 final screens, tokens, components, flows, error/loading/success |
+| `scripts/` | Script Figma và kiểm tra gói bài nộp |
+
+## Kiểm tra gói bài nộp
+
+```sh
+python3 scripts/validate_submission.py
+```
+
+Xem kết quả trong `design/accessibility-report.md` và `handoff/completion-status.md`. Đã mở editor/prototype trong trình duyệt chưa đăng nhập và chạy thử 3 luồng chính; chưa ghi nhận chạy plugin Contrast hoặc usability test <10 giây.
+
+Repository hiện có remote [dmm717/lab2_prm](https://github.com/dmm717/lab2_prm). Tên repo đích theo checklist: `prm323-lab2-SE192336`. GitHub CLI hiện có token không hợp lệ, nên chưa tạo repo đích hoặc push thay đổi.

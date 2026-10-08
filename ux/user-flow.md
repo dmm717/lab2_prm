@@ -38,7 +38,7 @@ graph TD
     AddScreen[Màn hình Thêm chi tiêu<br/>Bàn phím, Ghi chú & Nút Danh mục]:::screen
     CatPicker[Màn hình Chọn Danh mục<br/>Danh sách Lưới 3 cột]:::screen
     
-    CheckAmount{Số tiền > 0?}:::decision
+    CheckAmount{Số tiền là số nguyên > 0?}:::decision
     ShowError[Hiển thị cảnh báo lỗi<br/>'Vui lòng nhập số tiền']:::error
     ProcessSave[Xử lý & Lưu giao dịch<br/>Trừ tiền khỏi Ngân sách]:::system
     End([✔ Kết thúc: Màn hình Home<br/>đã cập nhật số dư]):::startEnd
@@ -54,7 +54,7 @@ graph TD
     AddScreen -->|Bấm 'Lưu chi tiêu'| CheckAmount
 
     %% Decision Validation
-    CheckAmount -->|Không: Số tiền bị trống hoặc = 0| ShowError
+    CheckAmount -->|Không: Nhập chữ, trống, số âm hoặc = 0| ShowError
     ShowError -->|Yêu cầu nhập lại số tiền| AddScreen
 
     CheckAmount -->|Có: Số tiền hợp lệ| ProcessSave
@@ -108,6 +108,10 @@ Bảng dưới đây đảm bảo cả 8 màn hình trong Information Architectu
 
 | User Flow | Các màn hình được sử dụng |
 | :--- | :--- |
-| **Flow 1** | 1. Home, 4. Thêm chi tiêu, 8. Chọn Danh mục |
-| **Flow 2** | 1. Home, 2. Thống kê, 5. Danh sách Giao dịch chi tiết |
-| **Flow 3** | 1. Home, 3. Split Bill Dashboard, 6. Tạo hóa đơn, 7. Chi tiết hóa đơn |
+| **Flow 1** | 01. Home, 02. Thêm chi tiêu, 03. Chọn Danh mục |
+| **Flow 2** | 01. Home, 04. Thống kê, 05. Danh sách Giao dịch chi tiết |
+| **Flow 3** | 01. Home, 06. Split Bill Dashboard, 07. Tạo hóa đơn, 08. Chi tiết hóa đơn |
+
+## Quy ước bản final 04/10/2026
+
+Số 01–08 theo `design/screen-spec.md`. Đường nhanh dùng danh mục/ngày mặc định: Thêm → preset 30.000đ → Lưu, không bắt buộc mở Category Picker. Nhánh lỗi nhập bằng chữ được thể hiện trong Prototype / Add invalid và Amount error dialog. Chia 3 người gồm Quân (người trả trước), Tuấn và Linh.

@@ -1,15 +1,25 @@
-# Quyết định thiết kế & Accessibility (Design Decisions)
+# 10 quyết định thiết kế và bằng chứng
 
-## 1. Top Quyết định Thiết kế quan trọng nhất
-1. **Dùng Floating Action Button (FAB):** Đặt FAB to ở góc dưới phải màn hình Home để thêm chi tiêu thay vì đặt nút bé ở trên header, vì sinh viên thường dùng điện thoại bằng 1 tay (ngón cái dễ với tới góc dưới).
-2. **Hệ màu Xanh lá và Đỏ:** Dùng màu xanh lá cho Thu và màu Đỏ cho Chi. Đây là Mental Model (mô hình nhận thức) quen thuộc nhất trong các app tài chính.
-3. **Giấu Form chi tiết:** Màn hình thêm chi tiêu chỉ bắt buộc nhập Số tiền và Danh mục. Mục "Ghi chú" và "Ngày" được ẩn gọn lại thành các lựa chọn không bắt buộc (optional) để tăng tốc độ nhập liệu (giúp đạt tiêu chí thành công < 10 giây).
-4. **Icon hóa Danh mục:** Thay vì để danh sách xổ xuống toàn chữ (Dropdown Menu), danh mục được thiết kế dạng lưới (Grid) với các Icon to, dễ nhận biết (Tô phở, Bình xăng, Trà sữa) để chạm chọn nhanh hơn.
-5. **Auto-Split Bill (Tự động chia đều):** Mặc định chức năng chia tiền sẽ tự động chia đều (chia trung bình cộng) vì 90% các bữa ăn sinh viên thường "Campuchia" đều nhau. Việc này tiết kiệm thao tác bấm máy tính. 
+1. **Thêm nhanh 3 lần chạm:** nút Thêm → preset 30.000đ → Lưu; mặc định Ăn uống và hôm nay. Mục tiêu <10 giây chưa được đo với người dùng thật.
+2. **Tiền VND và tiếng Việt:** khớp bối cảnh sinh viên Việt Nam; loại bỏ USD khỏi bộ màn hình mới.
+3. **CTA xanh đậm #006C49:** chữ trắng đủ tương phản, thay nền xanh #4CAF50/#10B981 của các bản đầu.
+4. **Số tiền 32px:** ưu tiên đọc ngân sách và khoản chi, giữ biểu đồ và lịch sử trong viewport.
+5. **Chỉ một nút Back:** tránh trùng Back và Close ở form, có đường quay lại ở mọi flow.
+6. **Danh mục dạng lưới:** tile tối thiểu 100×100; chọn danh mục cập nhật biến prototype và trở về form.
+7. **Dòng danh mục thay thế biểu đồ:** có vùng chạm lớn cho người khó bấm mảng donut; cả hai đường dẫn đến cùng bộ lọc.
+8. **Chia đều và có người trả trước:** 300.000đ/3=100.000đ, thêm người thứ tư=75.000đ; phần Quân đã trả được ghi bằng chữ.
+9. **Lỗi và loading có phản hồi:** không nhận chuỗi/trống/≤0; prototype có error dialog + Retry, spinner Smart Animate trước màn hình kết quả.
+10. **Tokens và instances:** Auto Layout, semantic variables, text styles và components tái sử dụng giúp thay đổi nhất quán, handoff dễ đối chiếu.
 
-## 2. Checklist Accessibility (Khả năng truy cập)
-- [x] **Độ tương phản (Contrast):** Chữ màu đen/xám đậm (`#212121`, `#757575`) trên nền trắng (`#FFFFFF`) và nền xanh lá (`#4CAF50`). Test trên Figma cho kết quả Pass (Contrast Ratio > 4.5:1 với văn bản thường, > 3:1 với chữ bự).
-- [x] **Vùng chạm (Touch Target):** Các nút bấm (Button), icon menu điều hướng ở đáy đều được set Auto Layout với kích thước Min Width/Min Height = 48x48 dp. Đảm bảo bấm không trượt.
-- [x] **Kích thước chữ (Font Size):** Không có nội dung text nào nhỏ hơn 14sp. Header hiển thị số tiền là 32sp.
-- [x] **Không dựa vào mỗi màu sắc:** Các khoản chi không chỉ có màu đỏ, mà còn có thêm dấu trừ (-) ở phía trước để những người mù màu vẫn nhận biết được đâu là khoản bị trừ, đâu là khoản được cộng.
-- [x] **Responsive Layout:** Đã test Auto Layout bằng cách kéo co giãn component trên Figma. Ở cả chiều rộng 360dp và 412dp, layout đều co giãn tự động, chữ tự đẩy xuống hàng, không bị tràn màn hình.
+## Kiểm tra thực hiện
+
+- [x] Audit cấu trúc 8 màn hình mới 360×800 và prototype, không có text mới dưới 14px.
+- [x] Button 52px, Back 48px, tab ≥48px, category tile ≥100px.
+- [x] Text/background được đo bằng công thức relative luminance, xem `accessibility-report.md`.
+- [x] Có dấu −/+, biểu tượng và nhãn trạng thái; không truyền đạt chỉ bằng màu.
+- [x] Đã xem ảnh render và sửa lỗi text/Auto Layout trước khi xuất bằng chứng.
+- [ ] Chạy plugin Contrast trực tiếp trong Figma theo checklist gốc.
+- [ ] Usability test đo thời gian <10 giây với persona thật.
+- [ ] Kiểm tra responsive 412px và bàn phím trên ứng dụng Flutter khi có mã ứng dụng.
+
+Các lời khẳng định “đã test 412px / plugin Pass” trong tài liệu cũ chưa có bằng chứng nên không được giữ như kết quả kiểm thử.

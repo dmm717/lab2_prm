@@ -14,3 +14,6 @@ Sinh viên ở trọ có ngân sách giới hạn cần một giải pháp nhanh
 
 ## Tiêu chí thành công
 Người dùng có thể thêm thành công một khoản chi tiêu mới trong vòng dưới 10 giây với tối đa 3 lần chạm màn hình (tính từ lúc mở ứng dụng).
+
+
+**Cách đo dự kiến:** bắt đầu khi Home đã tải, kết thúc khi thấy xác nhận lưu; 3 lần chạm cho preset 30.000đ với danh mục/ngày mặc định. Chưa đo thời gian với người dùng thật; nhập số tùy ý hoặc đổi danh mục có thể cần thêm thao tác.

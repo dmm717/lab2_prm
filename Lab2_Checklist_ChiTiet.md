@@ -45,16 +45,17 @@ Tạo thư mục `design/` và `ai/`. Mục đích là lấy bằng chứng bạ
 ## Giai đoạn 4: Prototype (Vẽ lại và nối dây trên Figma)
 Không được dùng hình của AI nộp bài, bạn phải tự vẽ lại trên Figma. Tạo 6 trang (Pages) trên Figma:
 
-- [ ] **Page 01 - User Flow:** Chèn 3 cái sơ đồ luồng ở giai đoạn 1 vào.
-- [ ] **Page 02 - Wireframe:** Phác thảo hình khối thô (trắng đen) cho 8 màn hình.
-- [ ] **Page 04 - Design System (Hệ thống thiết kế):**
+- [x] **Page 01 - User Flow:** Chèn 3 cái sơ đồ luồng ở giai đoạn 1 vào.
+- [x] **Page 02 - Wireframe:** Phác thảo hình khối thô (trắng đen) cho 8 màn hình.
+- [x] **Page 04 - Design System (Hệ thống thiết kế):**
   - Lưu sẵn các màu sắc (Xanh lá là mã màu gì) và font chữ vào hệ thống của Figma (Variables/Styles).
-- [ ] **Page 05 - Components (Linh kiện tái sử dụng):**
+- [x] **Page 05 - Components (Linh kiện tái sử dụng):**
   - Phải vẽ các linh kiện có sẵn để xài lại: Nút bấm, Ô nhập số tiền, Thanh menu đáy, Hộp thoại báo lỗi, Trạng thái loading. 
   - Bắt buộc phải dùng tính năng Auto Layout và lấy màu từ Page 04 (không được tô mã màu thủ công).
-- [ ] **Page 03 - Final UI:**
-  - Lấy các linh kiện ở Page 05 ráp thành 8 màn hình hoàn chỉnh (Kích thước 360x800). Dùng plugin "Contrast" check xem chữ có đọc rõ không.
-- [ ] **Page 06 - Prototype (Nối dây):**
+- [x] **Page 03 - Final UI:**
+  - Lấy các linh kiện ở Page 05 ráp thành 8 màn hình hoàn chỉnh (Kích thước 360x800). Đã kiểm tra màu bằng script (`design/accessibility-report.md`).
+  - [ ] Chạy plugin "Contrast" trực tiếp trong Figma; chưa đánh dấu hoàn thành bước plugin.
+- [x] **Page 06 - Prototype (Nối dây):**
   - Nối các màn hình lại sao cho click chuột trên hình thì nó chạy mượt như app thật. 
   - Bấm nút "Thêm" thì màn hình phải nhảy sang trang "Nhập tiền", nhập xong bấm "Lưu" thì xoay xoay (loading) rồi chuyển về trang chủ.
 
@@ -75,6 +76,13 @@ Tạo thư mục `handoff/`.
 ## Giai đoạn Cuối: Nộp bài (Gom bài lên GitHub)
 - [ ] Tạo repository GitHub tên: `prm323-lab2-<mã-số-sinh-viên>`.
 - [x] Tạo các thư mục `ux/`, `design/`, `ai/`, `handoff/`, `assets/` và nhét hết các file chữ (`.md`) vào đúng chỗ.
-- [ ] **Việc của bạn:** Nhét hết ảnh chụp AI và ảnh Figma vào `assets/stitch/` và `assets/figma/`.
+- [x] **Việc của bạn:** Nhét hết ảnh chụp AI và ảnh Figma vào `assets/stitch/` và `assets/figma/`.
 - [x] Viết 1 file `README.md` để ở ngoài cùng, ghi Tên đề tài, các công cụ AI đã xài, và có sẵn chỗ để dán đường link Figma.
-- [ ] **Lưu ý sinh tử:** Điền Link Figma vào file README.md, chỉnh quyền chia sẻ file Figma thành "Anyone with the link can view" (Ai có link cũng xem được). Mở tab ẩn danh check lại link.
+- [x] **Lưu ý sinh tử:** Điền Link Figma vào file README.md, chỉnh quyền chia sẻ file Figma thành "Anyone with the link can view" (Ai có link cũng xem được). Đã kiểm tra editor và prototype trong trình duyệt chưa đăng nhập ngày 04/10/2026; xem được nội dung. Không thay đổi quyền chia sẻ hiện có.
+
+
+## Bằng chứng bổ sung — 04/10/2026
+
+Sinh viên **SE192336 — Huỳnh Thiện Nhân**. Final UI mới có tiền tố `Lab2 /`; 8 wireframes và thiết kế cũ giữ nguyên. Figma có 6 pages đúng thứ tự, Variables/Text Styles, components và 3 prototype flows. 28 ảnh Figma được xuất trong `assets/figma/`; node nguồn ở `manifest.json`.
+
+Mục còn mở: tạo/push repo đúng tên (GitHub chưa xác thực) và chạy plugin Contrast. Không xác nhận usability <10 giây hay build Flutter vì chưa có bằng chứng/mã ứng dụng. Chi tiết: `handoff/completion-status.md`.
