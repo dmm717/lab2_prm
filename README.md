@@ -68,4 +68,4 @@ Lượt 08/10 có phản biện Codex thực tế kèm hash ảnh. Phần critiq
 
 ## Bản cập nhật phục vụ trình bày
 
-Các bổ sung của lượt này nằm trên nhánh `codex/lab2-evidence-and-handoff`. Xem [bản repository cập nhật](https://github.com/dmm717/lab2_prm/tree/codex/lab2-evidence-and-handoff). Main và audit Figma ngày04/10 được giữ làm mốc, chưa có sửa canvas mới trong lượt08/10. Thao tác push và quyền xem web cần được xác nhận riêng.
+Các bổ sung của lượt này nằm trên nhánh `codex/lab2-evidence-and-handoff`. Xem [bản repository cập nhật](https://github.com/dmm717/lab2_prm/tree/codex/lab2-evidence-and-handoff). Main và audit Figma ngày 04/10 được giữ làm mốc, chưa có sửa canvas mới trong lượt 08/10. Đã push nhánh và xác minh commit remote. README nhánh mới trả HTTP 200 không đăng nhập, có link critique mới và hai thành viên; ảnh Home cũng truy cập được. Quyền Figma chưa xác nhận.

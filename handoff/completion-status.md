@@ -20,7 +20,7 @@
 | Elevation và9 nhóm master/states | Có plan/inventory yêu cầu, chưa xác nhận áp dụng đủ |
 | Empty có CTA và route thật | Board có feedback, chưa chứng minh state trên màn hình |
 | Lịch sửUI generation/3refine | Có prompt/ảnh, chưa đối chiếu phiênStitch/chat gốc |
-| GitHub/quyền xem | Kết quả push/branch mới phải được xác nhận riêng; không suy từ thay đổi local |
+| GitHub/quyền xem | Đã push nhánh codex/lab2-evidence-and-handoff, xác minh commit remote; README truy cập HTTP 200 không cần đăng nhập. Quyền Figma chưa xác minh |
 | Vai trò cá nhân/tên môn/làmnhóm | Hai tên đã xác nhận; vai trò chưa cung cấp; cần đối chiếuPRM323/PRM393 và giảng viên cho phép nhóm |
 
 ## Giới hạn kiểm chứng
@@ -30,3 +30,8 @@ Trình duyệt hiện không xác minh được quyền truy cập đã lưu nê
 Validator kiểm tra gói local, hash minh chứng và audit đã lưu. Kết quảPass của validator không chứng nhận responsive, overlay, đầy đủcomponents hoặc lịch sửAI. Mục tiêu dưới 10 giây chưa có usabilitytest. Word không yêu cầu Flutter code/APK, không bắt buộc plugin Contrast cụ thể. NộpGitHub+Figma có quyền xem; slides không có điểm riêng.
 
 [ChecklistFigma](figma-final-checklist.md). [Implementationplan](../design/implementation-plan.md). [Đối chiếuWord](../presentation/requirements-review.md).
+
+
+## Xác nhận publication của lượt này
+
+Commit minh chứng 2ba5f2e đã push lên [nhánh cập nhật](https://github.com/dmm717/lab2_prm/tree/codex/lab2-evidence-and-handoff). Đã đọc README không đăng nhập: HTTP 200, có link AI critique mới và cả hai MSSV. Ảnh Home trên nhánh cũng truy cập được. Chi tiết ở publication-status.json. Đây là cập nhật nhánh riêng, chưa merge main và không xác nhận quyền Figma.
