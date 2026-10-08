@@ -50,13 +50,13 @@ Không được dùng hình của AI nộp bài, bạn phải tự vẽ lại tr
 - [x] **Page 04 - Design System (Hệ thống thiết kế):**
   - Lưu sẵn các màu sắc (Xanh lá là mã màu gì) và font chữ vào hệ thống của Figma (Variables/Styles).
 - [x] **Page 05 - Components (Linh kiện tái sử dụng):**
-  - Phải vẽ các linh kiện có sẵn để xài lại: Nút bấm, Ô nhập số tiền, Thanh menu đáy, Hộp thoại báo lỗi, Trạng thái loading. 
+  - Phải vẽ các linh kiện có sẵn để xài lại: Nút bấm, Ô nhập số tiền, Thanh menu đáy, Hộp thoại báo lỗi, Trạng thái loading.
   - Bắt buộc phải dùng tính năng Auto Layout và lấy màu từ Page 04 (không được tô mã màu thủ công).
 - [x] **Page 03 - Final UI:**
   - Lấy các linh kiện ở Page 05 ráp thành 8 màn hình hoàn chỉnh (Kích thước 360x800). Đã kiểm tra màu bằng script (`design/accessibility-report.md`).
   - [ ] Chạy plugin "Contrast" trực tiếp trong Figma; chưa đánh dấu hoàn thành bước plugin.
 - [x] **Page 06 - Prototype (Nối dây):**
-  - Nối các màn hình lại sao cho click chuột trên hình thì nó chạy mượt như app thật. 
+  - Nối các màn hình lại sao cho click chuột trên hình thì nó chạy mượt như app thật.
   - Bấm nút "Thêm" thì màn hình phải nhảy sang trang "Nhập tiền", nhập xong bấm "Lưu" thì xoay xoay (loading) rồi chuyển về trang chủ.
 
 ---
@@ -86,3 +86,8 @@ Tạo thư mục `handoff/`.
 Sinh viên **SE192336 — Huỳnh Thiện Nhân**. Final UI mới có tiền tố `Lab2 /`; 8 wireframes và thiết kế cũ giữ nguyên. Figma có 6 pages đúng thứ tự, Variables/Text Styles, components và 3 prototype flows. 28 ảnh Figma được xuất trong `assets/figma/`; node nguồn ở `manifest.json`.
 
 Mục còn mở: tạo/push repo đúng tên (GitHub chưa xác thực) và chạy plugin Contrast. Không xác nhận usability <10 giây hay build Flutter vì chưa có bằng chứng/mã ứng dụng. Chi tiết: `handoff/completion-status.md`.
+
+
+## Rà soát ngày 08/10/2026
+
+Các dấu [x] phía trên là ghi nhận lịch sử, không chứng minh đã chạy lại Figma. Kết luận hiện tại nằm ở handoff/completion-status.md. Còn kiểm tra: 412dp, Open overlay, elevation, đủ 9 nhóm components/states, tab label 11px, nguồn AI và quyền truy cập GitHub. Slide và presenter guide nằm trong presentation/. Tên repo/môn học cần theo đề chính thức và thông báo giảng viên.

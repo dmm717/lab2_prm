@@ -13,7 +13,7 @@
 Sinh viên ở trọ có ngân sách giới hạn cần một giải pháp nhanh gọn để ghi nhận các khoản chi nhỏ lẻ hằng ngày và chia tiền sòng phẳng với bạn bè, nhằm tránh tình trạng cạn kiệt tiền trước khi hết tháng do không kiểm soát được chi tiêu.
 
 ## Tiêu chí thành công
-Người dùng có thể thêm thành công một khoản chi tiêu mới trong vòng dưới 10 giây với tối đa 3 lần chạm màn hình (tính từ lúc mở ứng dụng).
+Người dùng có thể thêm thành công một khoản chi tiêu mới trong vòng dưới 10 giây với tối đa 3 lần chạm màn hình (tính khi Home đã tải, áp dụng preset và danh mục/ngày mặc định).
 
 
 **Cách đo dự kiến:** bắt đầu khi Home đã tải, kết thúc khi thấy xác nhận lưu; 3 lần chạm cho preset 30.000đ với danh mục/ngày mặc định. Chưa đo thời gian với người dùng thật; nhập số tùy ý hoặc đổi danh mục có thể cần thêm thao tác.

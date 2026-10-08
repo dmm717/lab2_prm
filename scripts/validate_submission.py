@@ -1,28 +1,53 @@
 #!/usr/bin/env python3
 """Verify local submission evidence and the saved Figma audit; no external writes."""
 from pathlib import Path
-import json, re, struct, sys
+import hashlib, json, re, struct, sys
+import argparse
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--write-report", action="store_true", help="Regenerate the token contrast report; does not certify Figma checks")
+args=parser.parse_args()
 ROOT = Path(__file__).resolve().parents[1]
 errors=[]
 def check(condition, message):
     if not condition: errors.append(message)
 required=['README.md','Lab2_Checklist_ChiTiet.md','ux/persona.md','ux/user-flow.md','design/DESIGN.md','design/design-decisions.md','design/screen-spec.md','handoff/flutter-handoff.md','handoff/prototype-guide.md','handoff/completion-status.md','ai/ai-design-log.md','design/figma-build-state.json','design/figma-prototype-audit.json','assets/figma/manifest.json']
+required += ['ai/critique-2026-10-08.md','ai/critique-evidence-2026-10-08.json','ai/stitch-prompt-next.md','design/implementation-plan.md','presentation/canva-link.md','presentation/presenter-guide.md']
 for name in required: check((ROOT/name).is_file(), 'Missing '+name)
 for path in ROOT.rglob('*.md'):
     if '.git' in path.parts: continue
-    for target in re.findall(r'!?\[[^\]]*\]\(([^)]+)\)',path.read_text()):
+    for target in re.findall(r'!?\[[^\]]*\]\(([^)]+)\)',path.read_text(encoding="utf-8")):
         target=target.split(' "')[0]
         if target.startswith(('http:','https:','app:','#','mailto:','skill:')): continue
         target=target.split('#')[0]
         if target: check((path.parent/target).exists(), f'Broken link {path.relative_to(ROOT)} → {target}')
-readme=(ROOT/'README.md').read_text()
+readme=(ROOT/'README.md').read_text(encoding="utf-8")
 check('SE192336' in readme and 'Huỳnh Thiện Nhân' in readme,'Missing student identity')
+check('SE192382' in readme and 'Lã Gia Huy' in readme,'Missing second confirmed member')
+evidence=json.loads((ROOT/'ai/critique-evidence-2026-10-08.json').read_text(encoding='utf-8'))
+critique=(ROOT/evidence['output']).read_text(encoding='utf-8')
+issue_ids=set(re.findall(r'\| (UX\d+) \|',critique))
+check(len(issue_ids)>=5,'New AI critique must contain at least five specific findings')
+check(issue_ids==set(evidence['issue_ids']),'AI critique issue IDs differ from evidence record')
+for image_record in evidence['inspected_images']:
+    image_path=(ROOT/image_record['path']).resolve()
+    check(image_path.is_relative_to(ROOT.resolve()),'AI evidence path escapes repository')
+    if image_path.is_file():
+        check(hashlib.sha256(image_path.read_bytes()).hexdigest()==image_record['sha256'],'AI evidence image changed: '+image_record['path'])
+    else: check(False,'AI evidence image missing: '+image_record['path'])
+for number in range(1,9):
+    text=(ROOT/'handoff/flutter-handoff.md').read_text(encoding='utf-8')
+    screen=text.split(f'## Màn hình {number:02d} —',1)
+    check(len(screen)==2,f'Missing handoff screen {number:02d}')
+    if len(screen)==2:
+        body=screen[1].split('\n## ',1)[0]
+        for section in ['Layout','Components','States','Interactions','Navigation','UI constraints']:
+            check(f'**{section}:**' in body,f'Missing {section} for screen {number:02d}')
 check('<Điền' not in readme and 'Link Figma của dự án tại đây' not in readme,'README contains placeholder')
-state=json.loads((ROOT/'design/figma-build-state.json').read_text())
+state=json.loads((ROOT/'design/figma-build-state.json').read_text(encoding="utf-8"))
 frames=state['finalUI']['screens']
 check(len(frames)==8,'Need exactly 8 new final screens')
 check(all(f['w']==360 and f['h']==800 and f['instances']>0 for f in frames),'Final screen sizing or component instances invalid')
-audit=json.loads((ROOT/'design/figma-prototype-audit.json').read_text())
+audit=json.loads((ROOT/'design/figma-prototype-audit.json').read_text(encoding="utf-8"))
 check(len(audit['start'])==3,'Need 3 flow starting points')
 check(all(any(c['main']=='44:2124' for c in f.get('components',[])) for f in audit['frames']), 'Every prototype needs the original iOS status component')
 check(all(c.get('sourcePage')=='1:5' for f in audit['frames'] for c in f.get('components',[])), 'Component origin must be 05. Components')
@@ -40,7 +65,7 @@ for v in audit['variables']:
     check('ALL_SCOPES' not in v['scopes'],'Overbroad variable scope: '+v['name'])
     for val in v['values'].values():
         if isinstance(val,dict) and val.get('type')=='VARIABLE_ALIAS': check(val['id'] in varids,'Broken alias: '+v['name'])
-manifest=json.loads((ROOT/'assets/figma/manifest.json').read_text())
+manifest=json.loads((ROOT/'assets/figma/manifest.json').read_text(encoding="utf-8"))
 for f in manifest['files']:
     path=ROOT/'assets/figma'/f"{f['name']}.{f['format']}"
     check(path.is_file(),'Missing exported asset '+path.name)
@@ -49,7 +74,7 @@ for f in manifest['files']:
     check(data[:8]==b'\x89PNG\r\n\x1a\n','Invalid PNG '+path.name)
     if f['name'][:2] in {'01','02','03','04','05','06','07','08'} and len(data)>24:
         check(struct.unpack('>II',data[16:24])==(360,800),'Wrong PNG screen dimensions '+path.name)
-check(len(list((ROOT/'assets/stitch').glob('*.png')))>=11,'Missing original/refinement AI screenshots')
+check(len(list((ROOT/'assets/stitch').glob('*.png')))>=11,'Missing saved AI screenshots (provenance checked separately)')
 def lum(color):
     vals=[int(color[i:i+2],16)/255 for i in (1,3,5)]
     vals=[v/12.92 if v<=0.04045 else ((v+0.055)/1.055)**2.4 for v in vals]
@@ -77,8 +102,9 @@ report='''# Kiểm tra accessibility — 04/10/2026
 - Mục tiêu <10 giây chưa được usability test. Responsive 412px, assistive technology và bàn phím thật chưa được kiểm tra.
 - Màu accent #10B981 dùng làm tham chiếu/trang trí, không dùng nền nút chữ trắng. Contrast trắng/accent chỉ {contrast('#FFFFFF','#10B981'):.2f}:1 nên không đạt chữ thường.
 '''
-(ROOT/'design/accessibility-report.md').write_text(report)
+if args.write_report:
+    (ROOT/'design/accessibility-report.md').write_text(report, encoding='utf-8')
 if errors:
     print('\n'.join('FAIL: '+e for e in errors));sys.exit(1)
 print(f'PASS: {len(required)} required files, {len(frames)} final screens, {len(audit["frames"])} prototype frames, {len(audit["reactions"])} reactions, {len(manifest["files"])} Figma exports, 8 contrast pairs.')
-print('External submission status and Contrast plugin completion remain tracked separately.')
+print('Saved-audit checks only: AI provenance, responsive 412dp, real overlays, component coverage and external submission remain separate.')

@@ -1,12 +1,12 @@
 # AI Design Log
 
 ## Công cụ sử dụng
-- **Google Stitch (hoặc v0.dev):** Dùng để tạo UI ban đầu. 
-- **ChatGPT (Mô hình GPT-4o):** Dùng để phản biện UI (Critique).
+- **Nguồn UI ban đầu:** log cũ ghi Google Stitch/v0.dev; cần đối chiếu lịch sử project để xác định công cụ cho từng ảnh.
+- **ChatGPT:** log cũ ghi GPT-4o; chưa có bản xuất chat để xác minh model và phản hồi nguyên văn.
 
 ## 1. UI Ban đầu (Initial UI)
-- **Lý do dùng Tiếng Anh:** Các AI tạo giao diện (như Stitch, v0) được huấn luyện chủ yếu bằng dữ liệu tiếng Anh. Việc dùng Prompt tiếng Anh kết hợp các "từ khóa ma thuật" (magic keywords) như *modern, premium, bento box, soft shadows* sẽ "ép" AI xuất ra một giao diện cực kỳ xịn xò, đẹp ngang ngửa các app xịn trên App Store thay vì các giao diện xấu xí, lỗi thời.
-- **Prompt (Copy đoạn tiếng Anh này dán vào AI):**
+- **Ngôn ngữ prompt:** tiếng Anh như bản ghi có sẵn. Ngôn ngữ prompt không chứng minh chất lượng đầu ra; thiết kế cuối dùng tiếng Việt và VND theo persona.
+- **Prompt lưu trong tài liệu gốc:**
   > "Design a modern, premium Expense Tracker mobile app UI for university students. The app name is 'StudentPay'. Use a vibrant modern aesthetic with a clean white background, soft subtle shadows, and a primary color of Emerald Green (#10B981) for trust and finance. Typography should be clean and readable (e.g., Inter font) with large bold numbers.
   > Generate a comprehensive UI covering these 8 distinct screens:
   > 1. **Home Screen:** Features a massive total balance (bento-box style card). Below it, a 'Recent Transactions' list. Include a floating action button (FAB) for adding expenses.
@@ -18,7 +18,7 @@
   > 7. **Create Split Bill:** A form to enter the total bill amount and a list of friends with checkboxes to split the cost.
   > 8. **Bill Detail:** Shows who already paid, who still owes money, and a 'Share/Remind' icon button.
   > Make sure all screens share a consistent design system and component style."
-- **Kết quả hình ảnh từ AI v0.dev (8 màn hình):**
+- **8 ảnh đầu ra có sẵn, nguồn từng phiên chưa xác minh lại:**
   Dưới đây là 8 màn hình được AI tạo ra từ Prompt trên, kèm theo giải thích chức năng chi tiết cho từng màn hình để tiện đối chiếu với yêu cầu đồ án:
 
   1. **Category Picker** (![Category Picker](../assets/stitch/1.png))
@@ -47,7 +47,7 @@
 
 ## 2. Phản biện bằng AI (Critique) & Quyết định
 
-Sau khi có 8 màn hình thực tế từ v0.dev, tôi đã yêu cầu ChatGPT đóng vai chuyên gia UX để phản biện thiết kế.
+Tài liệu cũ lưu prompt yêu cầu ChatGPT phản biện. Phần trả lời bên dưới được ghi là mẫu; không dùng làm bằng chứng phản hồi AI nguyên văn khi chưa đối chiếu lịch sử chat.
 
 - **Prompt gửi ChatGPT:**
   > "Act as an expert UX Designer. I am designing an Expense Tracker app named 'StudentPay' for Minh Quân (a 20-year-old college student who needs to split bills and track expenses quickly). Please review my 8 generated UI screens against Nielsen's 10 Usability Heuristics and basic accessibility rules. Provide exactly 5 specific heuristic violations or UX issues tied to specific screens."
@@ -60,7 +60,7 @@ Sau khi có 8 màn hình thực tế từ v0.dev, tôi đã yêu cầu ChatGPT �
   > 4. (Match between system and real world): Screen 4 uses 'Net +$50.50 in your favor', which might be too formal for college students.
   > 5. (Aesthetic and minimalist design): Screen 8's donut chart is too massive, pushing primary category data below the fold."
 
-Dưới đây là ghi nhận quyết định (Chấp nhận/Từ chối) của tôi cho từng phát hiện của ChatGPT, bám sát vào persona sinh viên và các nguyên lý UX:
+Các quyết định bên dưới là ghi nhận lịch sử. Một số đã thay đổi ở bản final; bảng đối chiếu cuối file là quyết định áp dụng hiện tại.
 
 1. **Phát hiện 1 (Consistency and standards):** Ở màn hình số 6 (Add Expense - `6.png`), giao diện có chứa cả nút mũi tên Back `<-` (ở trên cùng bên trái) và nút Tắt `x` (ở thẻ Quick Add bên phải). Điều này gây dư thừa và bối rối cho người dùng (không rõ bấm nút nào để hủy).
    - **Quyết định:** **CHẤP NHẬN**. Khi vẽ trên Figma, tôi sẽ xóa bỏ nút `x` dư thừa và chỉ giữ lại mũi tên Back tiêu chuẩn để điều hướng đồng nhất.
@@ -68,7 +68,7 @@ Dưới đây là ghi nhận quyết định (Chấp nhận/Từ chối) của t
 2. **Phát hiện 2 (Visibility of system status):** Ở màn hình số 3 (Create Shared Bill - `3.png`), sau khi chọn bạn bè và bấm "Send Split Request", giao diện không gợi ý trạng thái tiếp theo (ví dụ: thông báo gửi thành công).
    - **Quyết định:** **CHẤP NHẬN**. Trên bản Figma Prototype, tôi sẽ thiết kế thêm một thông báo nổi (Toast Notification) báo "Đã gửi yêu cầu thành công!" hiện ra sau khi bấm nút.
 
-3. **Phát hiện 3 (Error prevention):** Ở màn hình số 7 (Home - `7.png`), nút "Add Funds" được đặt ngay cạnh nút "Send" ở thẻ số dư. Nếu người dùng lỡ tay bấm nhầm, app có thể tự động rút tiền từ thẻ ngân hàng liên kết mà không báo trước.
+3. **Phát hiện 3 (Error prevention):** Ở màn hình số 7 (Home - `7.png`), nút "Add Funds" được đặt ngay cạnh nút "Send" ở thẻ số dư. Các nhãn Send/Add Funds có thể làm người dùng hiểu đây là ứng dụng chuyển tiền. Ảnh tĩnh không chứng minh có liên kết ngân hàng hoặc tự động rút tiền.
    - **Quyết định:** **CHẤP NHẬN**. Sẽ bổ sung ghi chú vào bản vẽ Figma yêu cầu một Pop-up xác nhận "Bạn có chắc muốn nạp thêm tiền không?" để chống chạm nhầm.
 
 4. **Phát hiện 4 (Match between system and the real world):** Ở màn hình số 4 (Split Bills Dashboard - `4.png`), AI cho rằng cụm từ "Net +$50.50 in your favor" hơi mang tính học thuật tài chính, có thể khiến sinh viên khó hiểu so với việc ghi "Mọi người đang nợ bạn $50.50".
@@ -79,33 +79,33 @@ Dưới đây là ghi nhận quyết định (Chấp nhận/Từ chối) của t
 
 ## 3. Ba vòng lặp tinh chỉnh (Refine)
 
-Ngoài 5 lỗi ở trên sẽ được sửa thủ công khi chuyển sang Figma, tôi đã bắt AI tự động tinh chỉnh (Refine) lại 3 lỗi UX cơ bản khác ngay trên công cụ tạo UI:
+Log cũ có 3 prompt refine cho 3 mục tiêu khác nhau và các cặp ảnh dưới đây. Chưa xác minh lại lịch sử generate; cần bổ sung bản ghi nếu còn trước khi trình bày đây là 3 lần chạy AI đã kiểm chứng.
 
 ### Vòng lặp 1: Vấn đề "Nút Thêm Chi Tiêu chưa nổi bật"
 - **Vấn đề:** Nút thêm chi tiêu ở Màn hình 1 (Home) đang bị chìm, người dùng (đặc biệt là sinh viên đang cầm đồ ăn) khó bấm bằng 1 tay.
-- **Prompt (Copy đoạn tiếng Anh này):**
+- **Prompt refine lưu trong tài liệu gốc:**
   > "On Screen 1 (Home), the 'Add Expense' FAB is not prominent enough for single-handed use. Please change it to a massive, circular Floating Action Button anchored to the bottom-right corner. Use a vibrant contrasting color like Sunset Orange (#F97316) with a heavy drop shadow so it pops completely off the green/white background."
-- **Ảnh Trước & Sau:** 
-  - Trước: (![Trước](../assets/stitch/7.png)) 
-  - Sau: (![Refine 1](../assets/stitch/ui_v2.png))
+- **Ảnh Trước & Sau:**
+  - Trước: (![Trước](../assets/stitch/7.png))
+  - Sau: (![Refine 1](../assets/stitch/ui_v4.png))
   - *Ghi chú:* Giao diện đã được cải thiện rõ rệt. Nút bấm được đổi sang màu Cam (Sunset Orange) và to hơn hẳn, tách biệt hoàn toàn khỏi nền xanh của app, giải quyết dứt điểm vấn đề khó thao tác bằng một tay.
 
 ### Vòng lặp 2: Vấn đề "Không phân biệt được Thu và Chi"
 - **Vấn đề:** Trong danh sách giao dịch ở Màn hình 5 (History), các con số có màu đen/xám giống nhau, gây nhầm lẫn về mặt nhận thức (Cognitive load) khi đọc lướt.
-- **Prompt (Copy đoạn tiếng Anh này):**
+- **Prompt refine lưu trong tài liệu gốc:**
   > "On Screen 5 (Transaction History), all amounts look the same. Improve the visual hierarchy and scanning experience: change the text color of income amounts to bold Emerald Green (e.g., +$500), and change expense amounts to bold Rose Red (#E11D48) with a minus sign (e.g., -$15). Add a subtle background pill shape behind the numbers for extra clarity."
 - **Ảnh Trước & Sau:**
   - Trước: (![Trước](../assets/stitch/2.png))
-  - Sau: (![Refine 2](../assets/stitch/ui_v3.png))
+  - Sau: (![Refine 2](../assets/stitch/ui_v2.png))
   - *Ghi chú:* Nhờ việc tô màu Xanh lá cho số tiền Thu và màu Đỏ (kèm dấu trừ) cho số tiền Chi, người dùng có thể quét mắt (scan) qua danh sách và nhận biết ngay dòng tiền mà không cần phải đọc chữ. Giảm thiểu đáng kể gánh nặng nhận thức (cognitive load).
 
 ### Vòng lặp 3: Vấn đề "Thiếu trạng thái trống (Empty State)"
 - **Vấn đề:** Màn hình 4 (Thống kê) nếu chưa có dữ liệu sẽ chỉ là một trang giấy trắng, vi phạm quy tắc "Visibility of system status", khiến user tưởng app bị đơ.
-- **Prompt (Copy đoạn tiếng Anh này):**
+- **Prompt refine lưu trong tài liệu gốc:**
   > "Screen 4 (Analytics) looks broken when there is no data. Please design a charming 'Empty State' in the center of the screen instead of the chart. It should include a cute, soft-colored illustration of an empty wallet, a friendly grey text saying 'No expenses yet this month!', and a clear Call-To-Action (CTA) button saying 'Add your first expense' to guide the user."
 - **Ảnh Trước & Sau:**
   - Trước: (![Trước](../assets/stitch/8.png))
-  - Sau: (![Refine 3](../assets/stitch/ui_v4.png))
+  - Sau: (![Refine 3](../assets/stitch/ui_v3.png))
   - *Ghi chú:* Trạng thái trống (Empty State) đã được thêm vào với hình ảnh minh họa đáng yêu và nút kêu gọi hành động (CTA) rõ ràng. Giờ đây khi người dùng mới chưa có dữ liệu, app trông vẫn rất sinh động và biết cách "dẫn đường" thay vì như bị lỗi văng màn hình trắng.
 
 
@@ -127,3 +127,41 @@ Tái sử dụng thư viện StudentPay trên 05. Components; status iOS và tab
 ### Motion và fixed header — 04/10/2026
 
 Dùng figma-use và figma-use-motion để thêm pressed state 100ms từ Components gốc, chuyển tab/trang, hộp thoại từ dưới, donut entrance và spinner. Status/header/footer cố định; Content cuộn riêng. Kiểm thử Present với bản Home dài tạm: danh sách cuộn, header và tab bar giữ vị trí; bản tạm đã xóa. Phát hiện frame Tạo hóa đơn bị ẩn và khôi phục visibility, thử lại Groups → Tạo → loading → Chi tiết thành công. Audit mới: 29 prototype frames, 89 navigation reactions, 27 press interactions, 3 starting points, không có issues. Ledger: design/figma-motion-state.json.
+
+
+## Đối chiếu quyết định với bản final — 08/10/2026
+
+Đây là rà soát tài liệu và ảnh hiện có, không phải phiên ChatGPT critique mới. Prompt/ảnh lịch sử được giữ nguyên. Các quyết định hiện tại dựa trên ảnh final và đặc tả cuối.
+
+| Phát hiện cụ thể | Căn cứ UX/persona | Quyết định cuối | Minh chứng |
+|---|---|---|---|
+| Add Expense gốc có Back và Close | Consistency, tránh hai cách hủy không rõ khác nhau | Accept: giữ một Back | 6.png và 02-add-expense.png |
+| Home gốc dùng USD, tiếng Anh và chức năng Send/Add Funds | Match with real world, persona sinh viên Việt Nam cần ghi chi tiêu | Modify: VND, tiếng Việt, bỏ chuyển tiền khỏi phạm vi | 7.png và 01-home.png |
+| Chữ trắng trên accent #10B981 có contrast 2.54:1 | Accessibility cho người dùng ngoài trời | Modify: CTA #006C49 đạt 6.48:1 | accessibility-report.md |
+| Flow lưu cần chỉ rõ đang lưu, lỗi và cách phục hồi | Visibility of system status và error recovery | Accept: thêm loading, kết quả và Retry | prototype-loading/invalid/error-dialog/saved.png |
+| Analytics cần lựa chọn dễ chạm ngoài biểu đồ màu | Accessibility và thao tác một tay | Modify: giữ dòng danh mục có nhãn/số tiền cùng chart | 04-analytics.png và prototype-guide.md |
+
+| Đề xuất/lựa chọn AI lịch sử | Quyết định áp dụng cuối | Lý do |
+|---|---|---|
+| Refine 1 dùng FAB màu cam | Modify | Giữ CTA nổi bật nhưng dùng button xanh đậm thống nhất và tương phản |
+| Refine 2 phân biệt Thu/Chi | Accept | Bản final có dấu +/− và màu, không chỉ dùng màu |
+| Refine 3 bổ sung empty state | Accept về nguyên tắc | Feedback Empty có trong thư viện; cần xác nhận trạng thái empty gắn vào màn hình trước khi chốt prototype |
+| Giữ câu “in your favor” | Thay đổi quyết định lịch sử | Bản final ưu tiên nhãn tiếng Việt dễ hiểu |
+| Home có Send/Add Funds | Reject khỏi phạm vi | Lab tập trung ghi chi tiêu/chia hóa đơn, không có bằng chứng tính năng chuyển tiền |
+
+## Kiểm chứng lịch sử AI còn cần bổ sung
+
+- Đối chiếu project Stitch/v0 để xác nhận công cụ, prompt và output của từng vòng.
+- Lưu ảnh/bản xuất chat phản biện thực tế nếu còn. Nếu không còn, tiếp tục ghi phần mẫu là tham khảo, không gọi là nguyên văn AI.
+- Prompt ban đầu có university students, mobile, 8 screens và style nhưng chưa thể hiện đầy đủ constraints 360/412dp, VND và accessibility. Nếu tạo thêm vòng AI, lưu nguyên văn prompt thật với các constraints này; không sửa lại prompt cũ như thể đã dùng từ đầu.
+
+## Sửa liên kết ảnh theo nội dung quan sát
+
+Rà soát ảnh ngày 08/10 cho thấy liên kết before/after trong log cũ bị lệch: ui_v4.png có FAB cam, ui_v2.png có danh sách giao dịch, ui_v3.png có empty state. Đã sửa liên kết minh họa cho đúng nội dung ảnh, giữ nguyên tệp và prompt. Việc này không xác nhận thời gian hay thứ tự generate thực tế.
+
+
+## AI critique thực tế mới — 08/10/2026
+
+Đã thực hiện một lượt Codex critique mới dựa trên ảnh thật và source trong cuộc trò chuyện hiện tại. Output có tám phát hiện gắn màn hình, căn cứ UX và quyết định: [critique-2026-10-08.md](critique-2026-10-08.md). [Evidence record](critique-evidence-2026-10-08.json) lưu hash ảnh và phạm vi đã kiểm tra. Đây là phản hồi AI mới, không phải lời xác nhận về GPT-4o/Stitch lịch sử. Chưa có thao tác Figma mới trong lượt này.
+
+[Prompt Stitch đủ persona/task/platform/constraints/style](stitch-prompt-next.md) đã chuẩn bị nhưng **chưa chạy**. Giữ nguyên prompt cũ và trạng thái lịch sử ba refine chưa xác minh.

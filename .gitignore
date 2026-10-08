@@ -1,3 +1,8 @@
 submission/
 __pycache__/
 *.pyc
+
+.work-presentation/
+
+# Historical PowerPoint draft; deliverable is Canva.
+presentation/*.pptx

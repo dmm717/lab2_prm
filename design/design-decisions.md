@@ -3,7 +3,7 @@
 1. **Thêm nhanh 3 lần chạm:** nút Thêm → preset 30.000đ → Lưu; mặc định Ăn uống và hôm nay. Mục tiêu <10 giây chưa được đo với người dùng thật.
 2. **Tiền VND và tiếng Việt:** khớp bối cảnh sinh viên Việt Nam; loại bỏ USD khỏi bộ màn hình mới.
 3. **CTA xanh đậm #006C49:** chữ trắng đủ tương phản, thay nền xanh #4CAF50/#10B981 của các bản đầu.
-4. **Số tiền 32px:** ưu tiên đọc ngân sách và khoản chi, giữ biểu đồ và lịch sử trong viewport.
+4. **Số tiền 28px theo bản final:** ưu tiên đọc ngân sách và khoản chi, giữ biểu đồ và lịch sử trong viewport.
 5. **Chỉ một nút Back:** tránh trùng Back và Close ở form, có đường quay lại ở mọi flow.
 6. **Danh mục dạng lưới:** tile tối thiểu 100×100; chọn danh mục cập nhật biến prototype và trở về form.
 7. **Dòng danh mục thay thế biểu đồ:** có vùng chạm lớn cho người khó bấm mảng donut; cả hai đường dẫn đến cùng bộ lọc.
@@ -20,6 +20,10 @@
 - [x] Đã xem ảnh render và sửa lỗi text/Auto Layout trước khi xuất bằng chứng.
 - [ ] Chạy plugin Contrast trực tiếp trong Figma theo checklist gốc.
 - [ ] Usability test đo thời gian <10 giây với persona thật.
-- [ ] Kiểm tra responsive 412px và bàn phím trên ứng dụng Flutter khi có mã ứng dụng.
+- [ ] Kiểm tra responsive 412px ngay trong Figma và lưu ảnh; không cần chờ Flutter. Bàn phím thật là kiểm thử triển khai tương lai.
 
 Các lời khẳng định “đã test 412px / plugin Pass” trong tài liệu cũ chưa có bằng chứng nên không được giữ như kết quả kiểm thử.
+
+## Đối chiếu cuối
+
+Quyết định accept/modify/reject hiện tại được ánh xạ trong ai/ai-design-log.md. Tab labels 11px là ngoại lệ còn cần đối chiếu, overlay thật và elevation chưa được xác nhận. Xem handoff/figma-final-checklist.md.

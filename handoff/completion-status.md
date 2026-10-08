@@ -1,49 +1,32 @@
-# Tình trạng hoàn thành Lab 2 — 04/10/2026
+# Tình trạng bài nộp — cập nhật08/10/2026
 
-## Đã hoàn thành
+## Đã hoàn thành hoặc đối chiếu trong lượt này
 
-- Đối chiếu tài liệu và Figma thật, giữ lại 8 wireframes, 3 final screens cũ và thư viện components gốc.
-- 6 pages được chuẩn hóa theo checklist; bổ sung 3 user flows chỉnh sửa được, có nhánh lỗi nhập chữ.
-- 8 Final UI mới 360×800, có tiền tố `Lab2 /`, dùng tiếng Việt và VND.
-- 39 foundation variables trong 2 collections, 2 biến chuỗi prototype, 6 Inter text styles.
-- 7 component families bổ sung, Error dialog, Spinner và bảng minh họa states; Auto Layout, màu/radius/gap lấy từ variables.
-- Prototype: 3 starting points, 29 frames gồm 8 màn hình chính và states, 89 navigation reactions theo audit lưu. Có loading Smart Animate, lỗi + Retry, chọn danh mục, báo cáo theo danh mục, chia 3/4 người.
-- 28 ảnh xuất Figma: 8 final, 8 wireframes, 3 flows, design system, components và 7 prototype states. Manifest chứa node nguồn.
-- README có MSSV, tên sinh viên, link Figma, link Stitch, link prototype; đã bổ sung đủ 10 quyết định thiết kế và đồng bộ handoff.
-- Tính tương phản bằng script cho các cặp màu nội dung; xem `design/accessibility-report.md`.
-- Chạy thử browser ngày 04/10/2026: Home → preset → loading → Home 1.220.000đ; nhập chữ → hộp lỗi → Retry; Thống kê → lịch sử Ăn uống; Chia tiền → Tạo → loading → chi tiết 100.000đ/người.
-- Kiểm tra xem công khai: Figma editor và prototype tải được trong trình duyệt chưa đăng nhập (editor hiện Sign up, Share mở hộp đăng nhập). Đây là kiểm tra truy cập anonymous, không phải thay đổi thiết lập Share hay xác nhận tên lựa chọn trong hộp Share.
+- Có tài liệu persona, IA và3 flow. Đã sửa sơ đồ/từ ngữ để mô tả đúng prototype dùng preset, Back, alternate/error/recovery và flow–screen map.
+- Đã thực hiện **AI critique mới bằng Codex**, xem ảnh thật và lập8 phát hiện cụ thể kèm căn cứ, quyết định, trạng thái. Có output và recordhash ảnh ở `ai/critique-2026-10-08.md`, `ai/critique-evidence-2026-10-08.json`.
+- Đã chuẩn bị prompt Stitch đủ persona/task/mobile/constraints/style. Prompt này **chưa chạy** và không thay thế prompt lịch sử.
+- Đã rà soát handoff8 screen, mỗi screen6 phần và2 bảngmapping. Bổ sung implementation plan cho 360/412, elevation,9nhóm/states và overlay, ghi rõ chưa áp dụng lên Figma.
+- Có8 ảnh final360×800,28 exportFigma và11 ảnhAI lịch sử. Audit cũ ghi29 prototype frames,89 navigation reactions,3 starting points.
+- Có báo cáo8 cặp contrast tính sRGB; không đánh đồng với kiểm tra mọi control hoặc kết quả plugin.
+- Có Canva 12 trang, speaker notes và kịch bản demo. Link bản giao xem `presentation/canva-link.md`.
 
-## Còn cần hoàn tất
+## Công việc chưa hoàn tất
 
-1. **Chạy plugin Contrast trong Figma.** Chỉ kiểm tra tính toán đã thực hiện. Trình duyệt hiện chưa đăng nhập Figma nên không chạy được plugin trong editor; không ghi nhận plugin Pass.
-2. **Tạo/push repository `prm323-lab2-SE192336`.** `gh auth status` báo token GitHub không hợp lệ; GitHub `/new` trong trình duyệt chuyển sang Sign in. Chưa tạo repo, đổi remote hoặc push.
+| Công việc | Trạng thái thực tế |
+|---|---|
+| UI 412dp và kiểm tra360/412 | Có đặc tả, chưa sửa canvas hoặc có export412 thật |
+| Tab labels 14sp | Audit cũ11px, chưa sửa master/instances |
+| Overlay dialog thật | Scripts dùngNAVIGATE, chưa sửa Openoverlay hoặc chạyPresent |
+| Elevation và9 nhóm master/states | Có plan/inventory yêu cầu, chưa xác nhận áp dụng đủ |
+| Empty có CTA và route thật | Board có feedback, chưa chứng minh state trên màn hình |
+| Lịch sửUI generation/3refine | Có prompt/ảnh, chưa đối chiếu phiênStitch/chat gốc |
+| GitHub/quyền xem | Kết quả push/branch mới phải được xác nhận riêng; không suy từ thay đổi local |
+| Vai trò cá nhân/tên môn/làmnhóm | Hai tên đã xác nhận; vai trò chưa cung cấp; cần đối chiếuPRM323/PRM393 và giảng viên cho phép nhóm |
 
-Sau khi đăng nhập lại GitHub, có thể dùng lệnh dưới đây để nộp bài. Lệnh tạo repo public và push chỉ chạy khi bạn sẵn sàng công bố bài:
+## Giới hạn kiểm chứng
 
-```sh
-gh auth login -h github.com
-# Đứng trong thư mục lab2_prm; kiểm tra git diff trước khi commit.
-git add README.md Lab2_Checklist_ChiTiet.md ux design ai handoff assets scripts
-git commit -m "Complete Lab 2 StudentPay Figma prototype and handoff"
-gh repo create prm323-lab2-SE192336 --public --source=. --remote=submission --push
-```
+Trình duyệt hiện không xác minh được quyền truy cập đã lưu nên không mở/điều khiển Figma hoặc editorCanva trong lượt này. Figma chưa có kết nối được xác nhận. Không vượt qua kiểm tra quyền truy cập; không đánh dấu thay đổi canvas đã thực hiện. Kết nốiCanva cho phép tạo/đọc nội dung, nhưng không thay thế visual/liveQA.
 
-Remote `origin` hiện tại vẫn là `dmm717/lab2_prm`. ZIP trong `submission/` là bản đóng gói local nếu muốn tải lên thủ công; chưa được publish.
+Validator kiểm tra gói local, hash minh chứng và audit đã lưu. Kết quảPass của validator không chứng nhận responsive, overlay, đầy đủcomponents hoặc lịch sửAI. Mục tiêu dưới 10 giây chưa có usabilitytest. Word không yêu cầu Flutter code/APK, không bắt buộc plugin Contrast cụ thể. NộpGitHub+Figma có quyền xem; slides không có điểm riêng.
 
-## Giới hạn kiểm thử
-
-- Prototype nhập bằng preset/kịch bản, không phải ứng dụng nhập số tự do. Checkbox và ngày/ghi chú chưa có hành vi dữ liệu thật; nhắc trả không gửi tin nhắn.
-- Ngưỡng <10 giây là mục tiêu, chưa đo usability thực tế; 3 lần chạm áp dụng cho preset mặc định.
-- Chưa kiểm tra Flutter/Android build, responsive 412px, bàn phím thật hay screen reader vì repo chưa có mã ứng dụng.
-- Nội dung critique và tên model GPT-4o trong log cũ là dữ liệu được kế thừa, không được xác minh lại.
-- Tên môn trong checklist là PRM323, còn tên file Figma là PRM393; giữ nguyên tên file nhóm của người dùng, cần đối chiếu đề chính thức trước khi nộp.
-
-## Cập nhật theo phản hồi UI
-
-- Đã tái sử dụng Components gốc; cân lại width 324px, typography 28/24/20/16/15/14, khoảng cách và safe area.
-- Tab bar lấy đúng Final UI StudentPay Overview: Home / Groups / Activity / You; các màn khác chỉ có thanh vuốt iOS. You mở profile SE192336 trong prototype.
-- Audit mới: 8 final screens, 29 prototype frames, 89 navigation reactions, 3 starting points; không có nội dung vượt vùng content. Label tab iOS giữ 11px theo mẫu người dùng chọn.
-
-- Header, status bar và footer/tab bar được cố định; chỉ Content cuộn. Đã xác nhận bằng nội dung dài trong Present, bản QA đã xóa.
-- Motion: pressed button 100ms, tab fade 180ms, chuyển trang 240–280ms, dialog từ dưới 260ms, biểu đồ xuất hiện 450ms, spinner 360ms. Ledger: `design/figma-motion-state.json`.
+[ChecklistFigma](figma-final-checklist.md). [Implementationplan](../design/implementation-plan.md). [Đối chiếuWord](../presentation/requirements-review.md).
