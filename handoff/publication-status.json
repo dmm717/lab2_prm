@@ -1,17 +1,26 @@
 {
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "branch": "codex/lab2-evidence-and-handoff",
-  "evidence_commit": "2ba5f2ef9d86929902b64a4a71be02f6858a489a",
+  "evidence_commit": "474d6ac59f79f2162d6da4c435ccae1c8ac33f2c",
   "remote_verified": true,
   "repo_url": "https://github.com/dmm717/lab2_prm/tree/codex/lab2-evidence-and-handoff",
   "unauthenticated_readme_http_status": 200,
-  "readme_contains_new_critique": true,
+  "readme_contains_new_canva_link": true,
   "readme_contains_both_member_ids": true,
+  "unauthenticated_412_asset_http_status": 200,
+  "asset_dimensions": [
+    412,
+    800
+  ],
+  "change_ledger_http_status": 200,
   "figma_access_verified": false,
-  "figma_mutated_in_this_turn": false,
-  "canva_design_id": "DAHXcJ7UCg4",
+  "figma_mutated_in_this_turn": true,
+  "figma_native_visual_qa": "8 final360 and8 QA412; preset data",
+  "figma_live_present_verified": false,
+  "figma_overlay_navigation_verified": true,
+  "canva_design_id": "DAHXfBV49EQ",
   "canva_notes_verified": 12,
-  "new_ai_critique_findings": 8,
-  "unauthenticated_home_asset_http_status": 200,
-  "home_asset_content_type": "image/png"
+  "canva_editor_visual_qa": false,
+  "new_figma_exports": 20,
+  "new_ai_critique_findings": 8
 }
