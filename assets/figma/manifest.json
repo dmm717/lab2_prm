@@ -13,33 +13,8 @@
       "format": "png"
     },
     {
-      "nodeId": "59:78",
-      "name": "03-category",
-      "format": "png"
-    },
-    {
       "nodeId": "59:121",
       "name": "04-analytics",
-      "format": "png"
-    },
-    {
-      "nodeId": "59:160",
-      "name": "05-transactions",
-      "format": "png"
-    },
-    {
-      "nodeId": "59:202",
-      "name": "06-split-bills",
-      "format": "png"
-    },
-    {
-      "nodeId": "59:236",
-      "name": "07-create-bill",
-      "format": "png"
-    },
-    {
-      "nodeId": "59:279",
-      "name": "08-bill-detail",
       "format": "png"
     },
     {
@@ -70,11 +45,6 @@
     {
       "nodeId": "65:353",
       "name": "prototype-invalid",
-      "format": "png"
-    },
-    {
-      "nodeId": "66:229",
-      "name": "prototype-error-dialog",
       "format": "png"
     },
     {
@@ -131,16 +101,7 @@
       "nodeId": "32:1047",
       "name": "wireframe-08-detail",
       "format": "png"
-    },
-    {
-      "nodeId": "96:1134",
-      "name": "prototype-profile",
-      "format": "png"
-    },
-    {
-      "nodeId": "119:778",
-      "name": "prototype-analytics-entrance",
-      "format": "png"
     }
-  ]
+  ],
+  "scope": "Historical references needed for wireframes, flows, states and critique; current final images are in2026-10-09/manifest.json"
 }

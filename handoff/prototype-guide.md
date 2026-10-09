@@ -25,19 +25,20 @@ Tab Home mở Tổng quan; Groups mở Chia tiền; Activity mở Thống kê; Y
 
 ## Cuộn và chuyển động
 
-Header và status bar đứng yên khi cuộn; tab bar hoặc footer nằm cố định phía dưới. Content có viewport riêng, cuộn dọc khi nội dung dài hơn vùng hiển thị. Thiết lập áp dụng cho 8 Final UI mới, các frame Final UI gốc và 29 prototype frames.
+Header và status bar đứng yên khi cuộn; tab bar hoặc footer nằm cố định phía dưới. Content có viewport riêng, cuộn dọc khi nội dung dài hơn vùng hiển thị. Thiết lập áp dụng cho 8 Final UI mới, các frame Final UI gốc và các prototype frames; hiện31frames gồm một frame tham chiếu.
 
 | Tương tác | Hiệu ứng | Thời gian |
 |---|---|---|
 | Nhấn nút | Smart Animate sang Pressed, opacity 85% | 100ms |
 | Chuyển tab | Dissolve, Ease out | 180ms |
 | Vào trang / Quay lại | Push trái / phải, Ease out | 280ms / 240ms |
-| Hộp lỗi / thêm bạn / nhắc trả | Move in từ dưới | 260ms |
+| Error overlay | Dissolve, Close giữ form nền | 200ms |
+| Thêm bạn / nhắc trả | Move in từ dưới | 260ms |
 | Preset số tiền | Smart Animate | 220ms |
 | Mở Thống kê | Donut tăng kích thước và độ rõ | 450ms |
 | Đang lưu | Spinner Smart Animate, rồi hiện kết quả | 360ms + Dissolve 200ms |
 
-Chạy Present để xem animation. PNG trong assets chỉ là trạng thái tĩnh. Biểu đồ bắt đầu ở frame `119:778`, tự chuyển sang `65:122`. Audit hiện có 89 navigation reactions và 27 press interactions; mọi đích điều hướng đều thuộc page Prototype. Khung QA dùng kiểm thử cuộn đã được xóa.
+Chạy Present để xem animation. PNG trong assets chỉ là trạng thái tĩnh. Biểu đồ bắt đầu ở frame `119:778`, tự chuyển sang `65:122`. Graph hiện có95NODE navigation và2CLOSE; mọi đích NODE thuộc pagePrototype. Frame lỗi cũ66:229 là tham chiếu, không nằm trên đường Save hiện tại. Khung QA dùng kiểm thử cuộn đã được xóa.
 
 
 ## Cập nhật09/10

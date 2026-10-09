@@ -1,72 +1,53 @@
 # Lab 2 — StudentPay
 
-**Thành viên:** Huỳnh Thiện Nhân — SE192336; Lã Gia Huy — SE192382. StudentPay là thiết kế ứng dụng quản lý chi tiêu và chia hóa đơn cho sinh viên ở trọ. Bài nộp gồm thiết kế Figma, prototype, tài liệu UX, lịch sử AI và đặc tả bàn giao Flutter.
+**Thành viên đã xác nhận:** Huỳnh Thiện Nhân — SE192336; Lã Gia Huy — SE192382.
 
-## Thiết kế và trình bày
+StudentPay giúp sinh viên ở trọ ghi chi tiêu và chia hóa đơn. Repo giữ tài liệu và minh chứng cho chuỗi Analyze → Generate → Critique → Refine → Prototype → Handoff theo hướng dẫn Word PRM323. Lab2 không yêu cầu Flutter code/APK.
 
-- [Figma](https://www.figma.com/design/C7FiWYzVXUS8G2cnK5AGos/PRM393-Lab2-SE192382_SE192336)
-- [Prototype](https://www.figma.com/proto/C7FiWYzVXUS8G2cnK5AGos/PRM393-Lab2-SE192382_SE192336?page-id=1%3A6&node-id=65-2&starting-point-node-id=65%3A2)
-- [Stitch — project tham chiếu](https://stitch.withgoogle.com/projects/15153031226902677174)
-- [GitHub — remote hiện tại](https://github.com/dmm717/lab2_prm)
-- [Bài trình bày Canva 12 trang — chỉnh sửa trực tiếp](https://www.canva.com/d/Kp4_AiORPJfXWPo)
-- [Ghi chú thuyết trình và kịch bản demo](presentation/presenter-guide.md)
-- [Các bước còn cần kiểm tra trực tiếp trên Figma](handoff/figma-final-checklist.md)
+- [Figma design](https://www.figma.com/design/C7FiWYzVXUS8G2cnK5AGos/PRM393-Lab2-SE192382_SE192336)
+- [Figma prototype](https://www.figma.com/proto/C7FiWYzVXUS8G2cnK5AGos/PRM393-Lab2-SE192382_SE192336?page-id=1%3A6&node-id=65-2&starting-point-node-id=65%3A2)
+- [GitHub — bản cập nhật dùng để đối chiếu](https://github.com/dmm717/lab2_prm/tree/codex/lab2-evidence-and-handoff)
+- [Canva cuối — 12 trang](https://www.canva.com/d/Kp4_AiORPJfXWPo)
+- [Stitch — project tham chiếu trong bản ghi](https://stitch.withgoogle.com/projects/15153031226902677174)
 
-Tên file Figma hiện có PRM393 và hai MSSV SE192382_SE192336. Tài liệu hướng dẫn dùng PRM323. Cần đối chiếu tên môn và hình thức cá nhân/nhóm với giảng viên trước khi nộp. Người dùng xác nhận thành viên thứ hai là Lã Gia Huy — SE192382; chưa có phân công công việc cá nhân.
+## Yêu cầu Word và file giữ lại
 
-## Phạm vi thiết kế
-
-Sáu page: User Flow, Wireframe, Final UI, Design System, Components, Prototype. Bộ final `Lab2 /` có 8 màn hình 360×800, dùng tiếng Việt và tiền VND. Ngày 09/10 đã có thêm 8 QA412, tab 14/20, Empty có CTA, true overlay và elevation styles. Prototype hiện 31 frames gồm frame lỗi cũ giữ tham chiếu;3 starting points. Audit 04/10 là mốc lịch sử. Tab bar cuối dùng Home / Groups / Activity / You.
-
-Prototype sử dụng dữ liệu mẫu và preset. Các kịch bản độc lập, không đồng bộ giao dịch giữa mọi màn hình. Ngày, ghi chú, checkbox và nhắc thanh toán chỉ mô phỏng. Repo chưa có mã Flutter và Lab 2 không yêu cầu build APK.
-
-## Các kịch bản demo
-
-1. Home: Thêm chi tiêu, chọn 30.000đ, Lưu. Sau loading, số dư từ 1.250.000đ thành 1.220.000đ.
-2. Lưu khi trống/chữ: mở overlay lỗi; Nhập lại đóng về form gốc, chọn preset 30k rồi lưu.
-3. Analytics: đổi tháng 10→9 để xem Empty; CTA tới Add, chọn tháng để trở lại dữ liệu tháng 10.
-4. Activity: chọn mảng biểu đồ hoặc dòng danh mục để xem giao dịch đã lọc.
-5. Groups: tạo hóa đơn 300.000đ cho 3 người, mỗi người 100.000đ. Thêm An để chia 4 người, mỗi người 75.000đ.
-6. Chi tiết: mở bản xem trước nhắc thanh toán rồi quay lại, không gửi tin nhắn thật.
-
-## Bản đồ tài liệu
-
-| Tài liệu | Nội dung |
+| Yêu cầu | Artifact trong repo |
 |---|---|
-| [Persona](ux/persona.md) | Người dùng, vấn đề và tiêu chí thành công |
-| [User flows](ux/user-flow.md) | Kiến trúc thông tin, 3 flow, nhánh và ánh xạ màn hình |
-| [Design system cuối](design/DESIGN.md) | Tokens, text styles, layout và components |
-| [Screen spec](design/screen-spec.md) | 8 màn hình và giới hạn prototype |
-| [Quyết định thiết kế](design/design-decisions.md) | Quyết định và lý do gắn với persona |
-| [AI log](ai/ai-design-log.md) | Prompt, ảnh đầu ra, critique và 3 vòng refine |
-| [AI critique mới](ai/critique-2026-10-08.md) | 8 phát hiện thực tế bằng Codex, ảnh/source và trạng thái quyết định |
-| [Đặc tả sửa Figma](design/implementation-plan.md) | Responsive, typography, elevation, states và overlay đã triển khai; xem change ledger |
-| [Accessibility](design/accessibility-report.md) | Kết quả tính contrast và phần chưa kiểm tra |
-| [Flutter handoff](handoff/flutter-handoff.md) | 6 phần/màn hình, token và widget mapping |
-| [Trạng thái bài nộp](handoff/completion-status.md) | Kết quả local và công việc còn mở |
+| Persona, pain points, problem statement, chỉ số thành công | [ux/persona.md](ux/persona.md) |
+| IA, ít nhất tám màn hình, ba sơ đồ flow có alternate/error/recovery và screen map | [ux/user-flow.md](ux/user-flow.md), ảnh flow trong assets/figma |
+| Prompt nguyên văn, UI AI ban đầu, ít nhất ba refine có before/after | [ai/ai-design-log.md](ai/ai-design-log.md), 11 ảnh assets/stitch; [DESIGN.md](DESIGN.md) là nguồn thiết kế lịch sử |
+| Ít nhất năm vấn đề UX cụ thể và quyết định | [AI critique thật](ai/critique-2026-10-08.md), [record ảnh nguồn](ai/critique-evidence-2026-10-08.json), [design decisions](design/design-decisions.md) |
+| Wireframe/final, hierarchy, consistency, Empty/Loading/Error | [screen spec](design/screen-spec.md), tám wireframes, tám final360 mới và ảnh states |
+| Color/type/spacing/radius/elevation, variables/styles, chín nhóm component và instances | [design/DESIGN.md](design/DESIGN.md), ảnh Components/Elevation và [change ledger](design/figma-changes-2026-10-09.md) |
+| Contrast, target48, text14, 360/412, không chỉ màu | [accessibility report](design/accessibility-report.md), [responsive audit](design/figma-responsive-audit-2026-10-09.json), tám ảnh mỗi width |
+| Ba flow, Back, dialog overlay, loading→result, không dead ends | [prototype guide](handoff/prototype-guide.md), [graph](design/figma-live-audit-2026-10-09.json), ảnh states |
+| Sáu phần mỗi screen, hai bảng token→Flutter/component→widget | [handoff/flutter-handoff.md](handoff/flutter-handoff.md) |
+| Trình bày và demo | [link Canva](presentation/canva-link.md), [speaker notes/demo](presentation/presenter-guide.md) |
 
-`assets/stitch/` chứa 11 ảnh AI có sẵn. `assets/figma/` giữ28ảnh lịch sử; `assets/figma/2026-10-09/` thêm20 PNG thật gồm8 final360,8 QA412,Empty,Overlay,Components vàElevation. `DESIGN.md` tại root là tham chiếu lịch sử, không dùng thay đặc tả cuối trong `design/DESIGN.md`.
+## Minh chứng và phiên bản
 
-## Công cụ và nguồn minh chứng
+- Figma giữ sáu pages: 01 User Flow, 02 Wireframe, 03 Final UI, 04 Design System, 05 Components, 06 Prototype.
+- Tám final360×800 và tám QA412×800. Lề16, content328/380; min text14 trong phạm vi audit. CTA cao52, Back48×48, tab target cao49.
+- Prototype có ba starting points, 31 frames gồm một frame lỗi cũ giữ tham chiếu; graph ghi 95 NODE navigation và hai CLOSE. Save empty/invalid dùng OVERLAY; Retry/scrim CLOSE. Analytics Empty có CTA→Add.
+- 39 foundation + hai prototype variables, sáu text styles, ba elevation styles và chín nhóm component.
+- [20 PNG mới ngày09/10](assets/figma/2026-10-09/manifest.json): tám final360, tám QA412, Empty, Overlay, Components và Elevation. Manifest giữ node IDs, kích thước và hash.
+- [20 PNG tham chiếu còn cần thiết](assets/figma/manifest.json): tám wireframes, ba sơ đồ flow, bốn trạng thái prototype và năm ảnh phục vụ đối chiếu thiết kế/critique. Các ảnh lịch sử không thay thế ảnh final mới.
+- 11 ảnh AI gốc/refine trong assets/stitch. Giữ nguyên năm ảnh được hash trong critique record; không tạo lại minh chứng lịch sử.
 
-Log cũ ghi Stitch/v0 và ChatGPT nhưng chưa xác minh lịch sử phiên tạo hoặc model. Các prompt và ảnh được giữ nguyên, không coi đoạn critique mẫu là bản ghi AI đã xác thực. Phần bổ sung ngày 04/10 ghi nhận dùng Codex + Figma Plugin API, có source scripts và ledger node IDs.
+## Demo và giới hạn
 
-## Kiểm tra gói bài
+Home → Add empty → preset30.000đ → Save → Loading → Home1.220.000đ. Lưu trống/chữ mở overlay; Retry đóng về form ban đầu, sau đó chọn preset để phục hồi. Analytics dùng chart hoặc dòng danh mục để mở History; tháng9 có Empty và CTA. Groups tạo bill300.000đ chia3=100.000đ/người hoặc thêm An chia4=75.000đ/người. Reminder chỉ mở preview.
 
-```sh
-python -X utf8 scripts/validate_submission.py
-```
+Prototype dùng preset và dữ liệu mẫu độc lập; không có nhập liệu bằng bàn phím thật, backend hoặc gửi nhắc thanh toán. Các tương tác ứng dụng thật được ghi là yêu cầu triển khai trong handoff.
 
-Validator kiểm tra file, liên kết local, ảnh và audit đã lưu. Không truy cập Figma/GitHub trực tiếp, không kiểm chứng nguồn AI và không chạy plugin Contrast. Đã kiểm tra ảnh8 final360/8 QA412, graphOVERLAY/CLOSE vàcomponent inventory. Còn chạy Present, nội dung dài và quyền xem Figma. Xem checklist Figma trước khi tuyên bố bài hoàn tất.
+Đã kiểm tra cấu trúc, ảnh native của tám UI ở mỗi width, graph và contrast tính sRGB. Tám cặp màu chữ đạt4.5:1; viền input3.87:1 với trắng và3.68:1 với nền đạt ngưỡng control3:1. Đây không phải chứng nhận toàn bộ UI hay kết quả plugin Contrast. Word không bắt buộc một plugin cụ thể.
 
-Nhánh cập nhật đã push và xác minh từremote. Nếu giảng viên yêu cầu tên repo cụ thể, đối chiếu môn học trước đổi tên.
+## Những việc còn cần xác nhận trước khi nộp
 
+- Chạy Present ba flow, Back, Close/Retry, Empty, loading/result và mọi đường thoát; test tên/số dài, cuộn và bàn phím. Graph/ảnh không thay thế nghiệm thu tương tác.
+- Mở Figma/prototype bằng tài khoản khác hoặc không đăng nhập để xác nhận giảng viên xem được. GitHub README và ảnh412 đã từng truy cập HTTP200 không đăng nhập; cần thử lại các link trước buổi chấm.
+- Đối chiếu phiên Stitch/ba refine nếu còn lịch sử gốc. Prompt và ảnh được giữ nguyên; nguồn từng phiên chưa xác thực. Critique Codex08/10 và thay đổi Figma09/10 là minh chứng mới, không gán cho phiên ChatGPT/Stitch cũ.
+- Xác nhận vai trò cá nhân, tên môn PRM323 trong Word so với PRM393 ở Figma, và giảng viên cho phép làm nhóm. Không tự phân vai.
 
-### AI critique mới
-
-Lượt 08/10 có phản biện Codex thực tế kèm hash ảnh. Phần critique lịch sử vẫn giữ nhãn mẫu/chưa xác minh; prompt Stitch mới được chuẩn bị nhưng chưa chạy. Canvas đã sửa09/10, có change ledger, audits và20exports mới; plan riêng không thay thế minh chứng.
-
-
-## Bản cập nhật phục vụ trình bày
-
-Các bổ sung của lượt này nằm trên nhánh `codex/lab2-evidence-and-handoff`. Xem [bản repository cập nhật](https://github.com/dmm717/lab2_prm/tree/codex/lab2-evidence-and-handoff). Main và audit Figma04/10 giữ làm mốc. Figma đã được sửa trực tiếp09/10; xem [change ledger](design/figma-changes-2026-10-09.md). Đã push nhánh và xác minh commit remote. README nhánh mới trả HTTP 200 không đăng nhập, có link critique mới và hai thành viên; ảnh Home cũng truy cập được. Quyền Figma chưa xác nhận.
+Word đề xuất 10–12 slide/10 phút trình bày, 5 phút demo, 5 phút hỏi đáp; đây là đề xuất tổ chức. Đề gốc nộp một GitHub repository và một Figma link có quyền xem. Canva được giữ theo yêu cầu của người dùng; không có PowerPoint trong gói này.

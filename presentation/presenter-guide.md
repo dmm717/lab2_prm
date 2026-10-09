@@ -68,7 +68,7 @@ Nguồn: design/design-decisions.md, ai/ai-design-log.md, assets/figma/01-home.p
 
 55 giây. Tất cả tám ảnh final là export Figma thật 360×800, node IDs trong manifest. Wireframe và Final của Add được giữ nguyên tỷ lệ, không kéo méo. Nhấn mạnh hierarchy số tiền, CTA, sự đồng nhất spacing/typography. States và dialogs không tính thêm vào tám màn hình. Empty action master được dùng trên Analytics tháng 9, cóCTA đi tới Add. Không tuyên bố mọi màn hình đều cóEmpty.
 
-Nguồn: assets/figma/manifest.json, design/screen-spec.md, design/DESIGN.md
+Nguồn: assets/figma/2026-10-09/manifest.json, design/screen-spec.md, design/DESIGN.md
 
 ## Slide 09 — Design system: tokens và 9 nhóm component
 
@@ -86,13 +86,13 @@ Nguồn: design/accessibility-report.md, design/figma-responsive-audit-2026-10-0
 
 40 giây trên slide, sau đó demo5 phút. 0:00–0:35 sáu pages/támfinal. 0:35–1:40 Home, Add, preset 30k, Save, loading, số dư1.22m; thử trống/chữ rồi Retry. 1:40–2:20 Analytics, Ăn uống337500, Back. 2:20–3:10 Groups, bill300k chia3=100k hoặc thêmAn chia4=75k; previewreminder, Back. 3:10–4:05 Components master, AutoLayout, variablebinding, instances. 4:05–5:00 một prompt/output/critique/decision/Figmachange, GitHub và mapping. Kiểm tra Back và mọi đường thoát. Saveempty/invalid hiện dùng OVERLAY tới144:1841;Retry vàscrim CLOSE vềform gốc. Chọn preset 30k để phục hồi. Analytics tháng 10 → tháng 9 Empty → CTA Add;Month quay lại dữ liệu. Cấu trúc đã kiểm tra bằngAPI, chưa chạyPresent tronglượt này. Không nói đã thử live trong lượt này.
 
-Nguồn: handoff/prototype-guide.md, design/figma-prototype-audit.json, design/figma-motion-state.json, presentation/presenter-guide.md
+Nguồn: handoff/prototype-guide.md, design/figma-live-audit-2026-10-09.json, presentation/presenter-guide.md
 
 ## Slide 12 — Flutter handoff, kết quả và liên kết nộp
 
 45 giây. Hai bảng mapping riêng theo Word. Bảng đầy đủ có trong handoff/flutter-handoff.md, mỗi screen đủ6phần. Đây là đề xuất triển khai tương lai, không phải ứng dụngFlutter chạy được. Bài Lab2 không yêu cầu codeFlutter. Nộp repoGitHub và Figma có quyền xem, README và assetsđủ. Slideskhông có điểm rubricriêng và tài liệu hướng dẫn không yêu cầu nộp slidesriêng. Các links phải được mở kiểm tra quyềntrước nộp. Tài liệu và minh chứng mới được chuẩn bị trên nhánh codex/lab2-evidence-and-handoff. Kiểm tra kết quả push và quyền xem trước khi nộp. Rubric: UX15, AIgeneration10, iteration/critique15, finalUI20, designsystem15, prototype10, handoff10, docs5. Không đồng nhất cóslidesvới đãđạt mọi tiêu chíFigma.
 
-Nguồn: handoff/flutter-handoff.md, handoff/completion-status.md, README.md
+Nguồn: handoff/flutter-handoff.md, README.md, README.md
 
 ## Kịch bản demo 5 phút
 

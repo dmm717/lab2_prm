@@ -1,3 +1,7 @@
+# DESIGN — nguồn thiết kế AI lịch sử
+
+Bản ghi dưới đây được giữ làm tham chiếu đầu ra AI, không phải tokens hiện tại. Các cỡ chữ/màu lịch sử không chứng minh đạt yêu cầu final. Dùng [design/DESIGN.md](design/DESIGN.md) cho bộ Figma cuối và [AI log](ai/ai-design-log.md) cho prompt/ảnh.
+
 ---
 name: StudentPay Design System
 colors:

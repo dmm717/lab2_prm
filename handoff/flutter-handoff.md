@@ -1,6 +1,6 @@
 # Flutter handoff — StudentPay
 
-Đặc tả triển khai tương lai cho 8 màn hình `Lab2 /` 360×800. Tham chiếu thiết kế cuối ở `design/DESIGN.md`, screen IDs trong `design/figma-build-state.json`. Repo chưa có mã ứng dụng Flutter. Các hành vi nhập tự do, dữ liệu thật và gửi nhắc thanh toán dưới đây là yêu cầu triển khai, không phải tính năng đã chạy trong prototype.
+Đặc tả triển khai tương lai cho 8 màn hình `Lab2 /` 360×800. Tham chiếu thiết kế cuối ở `design/DESIGN.md`, screen IDs trong `design/figma-responsive-audit-2026-10-09.json`. Repo chưa có mã ứng dụng Flutter. Các hành vi nhập tự do, dữ liệu thật và gửi nhắc thanh toán dưới đây là yêu cầu triển khai, không phải tính năng đã chạy trong prototype.
 
 ## Quy tắc chung
 
@@ -29,7 +29,6 @@
 | `spacing/4,8,12,16,24,32` | 4/8/12/16/24/32px | EdgeInsets / SizedBox tương ứng |
 | `radius/12`, `radius/20` | 12px, 20px | BorderRadius.circular(12/20) |
 | `size/touch-target` | 48px | BoxConstraints(minWidth:48, minHeight:48) |
-
 | StudentPay/Elevation/0 | Không shadow | Không BoxShadow |
 | StudentPay/Elevation/1 | y2/blur8/alpha0.08 | BoxShadow(offset0/2,blurRadius8,color alpha0.08) |
 | StudentPay/Elevation/2 | y8/blur24/alpha0.18 | BoxShadow(offset0/8,blurRadius24,color alpha0.18) |
@@ -85,8 +84,8 @@ Bảng này là mapping triển khai. Sự hiện diện của đủ 9 nhóm com
 
 1. **Layout:** Header, content cuộn, tổng 750.000đ, donut và danh sách tỷ trọng, tab bar cố định.
 2. **Components:** Donut, category summary rows, header, tab bar.
-3. **States:** Populated. Empty/Loading/Error có hướng dẫn trong design system, cần xác nhận màn hình áp dụng trước khi bàn giao đầy đủ.
-4. **Interactions:** Chạm mảng biểu đồ hoặc dòng danh mục dẫn tới lịch sử đã lọc. Dữ liệu demo: 45% Ăn uống, 40% Nhà trọ, 15% Di chuyển.
+3. **States:** Populated tháng10; Empty tháng9 có component và CTA→Add. Loading entrance trước dữ liệu; lỗi tải là yêu cầu ứng dụng thật.
+4. **Interactions:** Chọn Month đổi tháng10/tháng9; Empty CTA mở Add. Chạm mảng biểu đồ hoặc dòng danh mục dẫn tới lịch sử đã lọc. Dữ liệu demo: 45% Ăn uống, 40% Nhà trọ, 15% Di chuyển.
 5. **Navigation:** Activity từ 01/06; danh mục tới 05; Groups/Home tới tab tương ứng.
 6. **UI constraints:** Luôn có nhãn và số tiền ngoài màu chart. Giữ danh sách dễ tiếp cận, dùng Semantics trong ứng dụng thật.
 

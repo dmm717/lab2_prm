@@ -1,10 +1,8 @@
-# StudentPay — Canva cuối cập nhật 09/10/2026
+# StudentPay — Canva cuối
 
-- [Chỉnh sửa bản cuối](https://www.canva.com/d/Kp4_AiORPJfXWPo)
-- [Xem bản cuối](https://www.canva.com/d/mC_Pc-gV0F3Q2Ud)
+- [Chỉnh sửa 12 trang](https://www.canva.com/d/Kp4_AiORPJfXWPo)
+- [Xem 12 trang](https://www.canva.com/d/mC_Pc-gV0F3Q2Ud)
 
-Design ID: `DAHXfBV49EQ`. 12 trang1280×720, hai thành viên đã xác nhận. Đã đọc lại nội dung và12notes trên Canva: có prompt ban đầu,3promptrefine nguyên văn,5phát hiện critique và2bảng handoff. Dùng8ảnh final360 mới, so sánh frame360/412 thật, ghi đúng tab14,EmptyCTA,OVERLAY/CLOSE và3elevationstyles.
+Design ID: DAHXfBV49EQ. Hai thành viên đúng như xác nhận. Nội dung và12notes đã đọc lại: prompt ban đầu,ba refine nguyên văn,năm vấn đề critique,ba sơ đồ flow,tám final mới,so sánh360/412,design system/prototype vàhai bảng handoff. [Speaker notes/demo](presenter-guide.md). [Yêu cầu và trạng thái](../README.md).
 
-Bố cục nguồn12trang đã xem, không có text overflow; đây không phải ảnh exportCanva. Metadata import là `unknown`, không khẳng định preset Presentation. Browser không xác minh được quyền đã lưu nên chưa visualQA editor hoặc chạy trình chiếu. Các bản Canva trước là bản nháp; dùng link này.
-
-[Ghi chú/demo](presenter-guide.md). [Đối chiếu Word](requirements-review.md). [Thay đổi Figma thật](../design/figma-changes-2026-10-09.md). [Checklist còn lại](../handoff/figma-final-checklist.md).
+Bố cục nguồn1280×720 đã rà,không có overflow. Metadata import là unknown,chưa visualQA editor hoặc chạy trình chiếu do browserpermissions. Các bảnCanva trước là nháp. Notes trênCanva có một số đường dẫn nguồn lịch sử;nguồn hiện tại đã được cập nhật trong presenter-guide.md vàREADME. Không có bảnPowerPoint trongrepo.
