@@ -87,6 +87,54 @@ rows=[]
 for label,fg,bg in pairs:
     ratio=contrast(fg,bg);check(ratio>=4.5,'Low contrast '+label)
     rows.append(f'| {label} | {fg} | {bg} | {ratio:.2f}:1 | {"Pass" if ratio>=4.5 else "Fail"} |')
+live=json.loads((ROOT/'design/figma-live-audit-2026-10-09.json').read_text(encoding='utf-8'))
+responsive=json.loads((ROOT/'design/figma-responsive-audit-2026-10-09.json').read_text(encoding='utf-8'))
+new_exports=json.loads((ROOT/'assets/figma/2026-10-09/manifest.json').read_text(encoding='utf-8'))
+check(len(responsive['pages'])==6,'Live Figma must retain six pages')
+for width in (360,412):
+    screens=[f for f in responsive['frames'] if f['w']==width]
+    check(len(screens)==8,f'Need eight live screens at {width}')
+    for f in screens:
+        check(f['innerWidth']==width-32 and f['padding']==16,'Incorrect fluid margins: '+f['name'])
+        check(f['minText']>=14 and f['instanceCount']>0,'Small text or no instances: '+f['name'])
+        for row in f['grid']:
+            check(max(c['width'] for c in row)-min(c['width'] for c in row)<0.01,'Unequal category columns')
+            check(all(c['sizing']=='FILL' for c in row),'Category grid must use Fill sizing')
+check(len(new_exports['files'])==20,'Need twenty new Figma exports')
+for item in new_exports['files']:
+    image_path=(ROOT/item['path']).resolve()
+    check(image_path.is_relative_to(ROOT.resolve()),'New export path escapes repository')
+    if image_path.is_file():
+        data=image_path.read_bytes()
+        check(hashlib.sha256(data).hexdigest()==item['sha256'],'New image hash mismatch: '+item['path'])
+        check(data[:8]==bytes([137,80,78,71,13,10,26,10]),'Invalid new PNG')
+        check(struct.unpack('>II',data[16:24])==(item['width'],item['height']),'New PNG size mismatch')
+    else: check(False,'Missing new export: '+item['path'])
+live_frames={f['id']:f for f in live['frames']}
+check(len(live['start'])==3,'Live prototype needs three starting points')
+check(all(not f['smallText'] for f in live['frames']),'Live prototype contains small text')
+edges={k:set() for k in live_frames}
+overlay_origins=set()
+for f in live['frames']:
+    for r in f['reactions']:
+        if r['type']=='NODE':
+            check(r['target'] in live_frames,'Missing live destination')
+            edges[f['id']].add(r['target'])
+            if r.get('nav')=='OVERLAY':overlay_origins.add(f['id'])
+        if r['trigger']=='ON_CLICK' and r['type'] in ('NODE','CLOSE'):
+            check(r['w']>=48 and r['h']>=48,'Small interactive target: '+r['node'])
+check(overlay_origins=={'65:321','65:353'},'Invalid forms must open the overlay')
+check(sum(r['type']=='CLOSE' for r in live_frames[live['overlay']]['reactions'])==2,'Overlay needs Retry and background Close')
+edges[live['overlay']].update(overlay_origins)
+check(any(r.get('target')=='65:321' for r in live_frames[live['empty']]['reactions']),'Empty CTA must reach Add')
+visited=set();todo=[x['nodeId'] for x in live['start']]
+while todo:
+    node=todo.pop()
+    if node in visited:continue
+    visited.add(node);todo.extend(edges.get(node,set())-visited)
+check(set(live_frames)-visited==set(live['referenceFrames']),'Unexpected unreachable live frames')
+check(all(edges[k] for k in visited),'Reachable frame has no exit')
+check(contrast('#73867A','#FFFFFF')>=3 and contrast('#73867A','#FAF8FF')>=3,'Input boundary contrast below 3:1')
 report='''# Kiểm tra accessibility — 04/10/2026
 
 Đo các cặp màu nội dung dùng trong bộ final mới bằng relative luminance sRGB. Đây là kiểm tra tính toán theo tokens, **không phải kết quả chạy plugin Contrast**, không chứng minh toàn bộ ứng dụng đạt WCAG.
@@ -103,8 +151,11 @@ report='''# Kiểm tra accessibility — 04/10/2026
 - Màu accent #10B981 dùng làm tham chiếu/trang trí, không dùng nền nút chữ trắng. Contrast trắng/accent chỉ {contrast('#FFFFFF','#10B981'):.2f}:1 nên không đạt chữ thường.
 '''
 if args.write_report:
-    (ROOT/'design/accessibility-report.md').write_text(report, encoding='utf-8')
+    table='# Contrast calculation — 2026-10-09\n\n| Role | Foreground | Background | Ratio | Text AA |\n|---|---|---|---|---|\n'+'\n'.join(rows)
+    table+=f"\n\nInput boundary #73867A / white: {contrast('#73867A','#FFFFFF'):.2f}:1 (control threshold3:1).\n"
+    (ROOT/'design/contrast-calculation-2026-10-09.md').write_text(table, encoding='utf-8')
 if errors:
     print('\n'.join('FAIL: '+e for e in errors));sys.exit(1)
 print(f'PASS: {len(required)} required files, {len(frames)} final screens, {len(audit["frames"])} prototype frames, {len(audit["reactions"])} reactions, {len(manifest["files"])} Figma exports, 8 contrast pairs.')
-print('Saved-audit checks only: AI provenance, responsive 412dp, real overlays, component coverage and external submission remain separate.')
+print(f'Live saved evidence: {len(responsive["frames"])} frames at360/412, {len(live_frames)} prototype frames, OVERLAY/CLOSE recovery, {len(new_exports["files"])} hash-verified new PNGs.')
+print('Structure and saved screenshot checks; Present, long content, AI provenance and external Figma permissions remain unverified.')

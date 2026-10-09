@@ -8,6 +8,7 @@
 | Thiếu tiền | Thêm → Lưu | Hộp lỗi → Nhập lại |
 | Nhập chữ | Thêm → Thử nhập bằng chữ → Lưu | Amount đỏ → hộp lỗi → Retry |
 | Chọn danh mục | Form → Danh mục → Nhà trọ | Form hiện Nhà trọ |
+| Empty tháng 9 | Analytics tháng 10 → chọn tháng → tháng 9 | Empty cóCTA→Add; chọn tháng quay lại tháng 10 |
 | Báo cáo | Thống kê → Ăn uống hoặc mảng xanh | Tổng ăn uống 337.500đ |
 | Bộ lọc khác | Nhà trọ/Di chuyển | 300.000đ / 112.500đ đúng danh mục |
 | Chia 3 | Chia tiền → Tạo → Xác nhận | 300.000đ, mỗi người 100.000đ |
@@ -37,3 +38,8 @@ Header và status bar đứng yên khi cuộn; tab bar hoặc footer nằm cố 
 | Đang lưu | Spinner Smart Animate, rồi hiện kết quả | 360ms + Dissolve 200ms |
 
 Chạy Present để xem animation. PNG trong assets chỉ là trạng thái tĩnh. Biểu đồ bắt đầu ở frame `119:778`, tự chuyển sang `65:122`. Audit hiện có 89 navigation reactions và 27 press interactions; mọi đích điều hướng đều thuộc page Prototype. Khung QA dùng kiểm thử cuộn đã được xóa.
+
+
+## Cập nhật09/10
+
+Save trống/chữ hiện dùng trueOVERLAY;Retry/scrim CLOSE về form ban đầu, sau đó chọn preset 30k để phục hồi. OverlayDissolve200ms; thêmbạn/reminder vẫn theo transitioncũ. Prototype31frames,3 starting points;frame lỗi cũ66:229 không còn làđíchSave. [Live graph](../design/figma-live-audit-2026-10-09.json) xác nhận cấu trúc;chưa chạyPresent tronglượt này.

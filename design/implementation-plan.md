@@ -1,6 +1,6 @@
-# Đặc tả sửa Figma theo Word — chưa áp dụng
+# Đặc tả sửa Figma theo Word — đã áp dụng09/10/2026
 
-Được chuẩn bị ngày 08/10/2026 từ ảnh, audit và source hiện có. Đây là yêu cầu triển khai và tiêu chí nghiệm thu, không phải minh chứng canvas đã sửa.
+Chuẩn bị 08/10 và triển khai trên canvas 09/10. Minh chứng thực tế ở [change ledger](figma-changes-2026-10-09.md). Các bước Present, nội dung dài và quyền xem chưa được xác nhận.
 
 ## Responsive
 
@@ -9,10 +9,10 @@ Giữ tám frame 360×800 và thêm bộ kiểm tra 412×800 cùng page03 để 
 | Thành phần | 360dp | 412dp | Quy tắc |
 |---|---:|---:|---|
 | Padding trái/phải | 16 | 16 | Token spacing16 |
-| Content/card/field/button | 324 | 380 | Fill container, không scale font |
+| Content/card/field/button | 328 | 380 | Fill container, không scale font |
 | Tab bar | 360 | 412 | Fill width, bốn tab chia đều |
-| Vùng tab mỗi mục | 90 | 103 | Target≥48, label 14/20 |
-| Category grid ba cột, gap12 | 100 | khoảng118.67 | Cột bằng nhau, nhãn wrap |
+| Vùng tab mỗi mục | 86 | 99 | Target≥48, label 14/20 |
+| Category grid ba cột, gap12 | 101.33 | 118.67 | Cột bằng nhau, nhãn wrap |
 | Button height | 52 | 52 | Giữ chiều cao và vùng chạm |
 | Back target | 48×48 | 48×48 | Icon nằm giữa target |
 
@@ -26,7 +26,7 @@ Empty phải có thông điệp và CTA đi được tới Add/Create. Loading p
 
 ## Elevation đề xuất
 
-Các mức sau là lựa chọn triển khai mới, **chưa tồn tại được xác nhận trong Figma**:
+Các mức sau đã tạo thành effect styles và áp dụng lên card/dialog. IDs và ảnh ở change ledger:
 
 | Style | Giá trị đề xuất | Nơi áp dụng | Flutter mapping dự kiến |
 |---|---|---|---|
@@ -34,7 +34,7 @@ Các mức sau là lựa chọn triển khai mới, **chưa tồn tại được
 | StudentPay/Elevation/1 | X0,Y2,blur8,spread0,#131B2E alpha0.08 | Card cần tách lớp | BoxShadow(offset0/2,blur8,color alpha0.08) |
 | StudentPay/Elevation/2 | X0,Y8,blur24,spread0,#131B2E alpha0.18 | Dialog overlay | BoxShadow(offset0/8,blur24,color alpha0.18) |
 
-Tạo effect styles có tên và áp dụng lên masters/instances phù hợp. Mức0 biểu thị quy tắc không bóng đổ; không giả tạo effect style không có effect. Ghi ảnh và node/style IDs sau khi áp dụng.
+Tạo effect styles có tên và áp dụng lên masters/instances phù hợp. Mức0 là style có effects rỗng, thể hiện quy tắc không bóng đổ. Ghi ảnh và node/style IDs sau khi áp dụng.
 
 ## Inventory chín nhóm
 

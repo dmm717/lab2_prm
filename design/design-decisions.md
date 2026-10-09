@@ -27,3 +27,8 @@ Các lời khẳng định “đã test 412px / plugin Pass” trong tài liệu
 ## Đối chiếu cuối
 
 Quyết định accept/modify/reject hiện tại được ánh xạ trong ai/ai-design-log.md. Tab labels 11px là ngoại lệ còn cần đối chiếu, overlay thật và elevation chưa được xác nhận. Xem handoff/figma-final-checklist.md.
+
+
+## Follow-up thực tế09/10/2026
+
+Đã thực hiện chuỗi critique UX04–UX08 → quyết định → thay đổi trên Figma. [Change ledger](../design/figma-changes-2026-10-09.md) ghi IDs, states, overlay và responsive. Ảnh cũ của critique giữ nguyên hash; ảnh mới nằm trong assets/figma/2026-10-09. Sửa hình học content: lề16 tương ứng328 tại360,380 tại412. Phần trạng thái chưa áp dụng trong bảng ngày08/10 là lịch sử ở thời điểm critique, được thay thế bằng follow-up này. Đây không phải phiên Stitch mới và không xác nhận provenance của ba refine cũ.

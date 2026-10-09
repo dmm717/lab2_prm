@@ -6,8 +6,8 @@
 
 - Tiếng Việt, tiền VND dạng số nguyên. Từ chối trống, chữ, số âm, 0 và kiểm tra cả paste. Lưu integer, format dấu chấm khi hiển thị.
 - Tab bar cuối: Home = Tổng quan, Groups = Chia tiền, Activity = Thống kê, You = Thông tin cá nhân. You là trang phụ, không tính vào 8 màn hình chính.
-- Status/header/footer cố định, chỉ content cuộn. Dùng SafeArea và cuộn khi bàn phím mở. Chuẩn bị layout cho 360 và 412dp; chưa có bằng chứng kiểm tra 412dp trong gói hiện tại.
-- Nội dung ≥14sp, vùng chạm ≥48×48dp. Label tab hiện 11px trong Figma là ngoại lệ cần xử lý/đối chiếu, không được coi là toàn bộ text đã đạt ngưỡng.
+- Status/header/footer cố định, chỉ content cuộn. Dùng SafeArea và cuộn khi bàn phím mở. Đã có8UI360 và8 QA412 trên Figma, content328/380; ảnh trong assets/figma/2026-10-09. Chưa kiểm tra bàn phím hoặc dữ liệu dài trong Present.
+- Nội dung ≥14sp, vùng chạm ≥48×48dp. Label tab đã sửa14/20; audit phạm vi final/prototype ghi min text14. Board lịch sử ngoài phạm vi không được coi đã sửa.
 - Ngân sách 2.000.000đ, trước/sau khoản chi 30.000đ: 1.250.000đ / 1.220.000đ. Các flow dùng dữ liệu mẫu độc lập.
 - Chia 300.000đ cho 3 người gồm người trả trước: 100.000đ/người; 4 người: 75.000đ/người. Số không chia hết: phân phối phần dư 1đ theo thứ tự thành viên ổn định.
 
@@ -30,7 +30,11 @@
 | `radius/12`, `radius/20` | 12px, 20px | BorderRadius.circular(12/20) |
 | `size/touch-target` | 48px | BoxConstraints(minWidth:48, minHeight:48) |
 
-Elevation chưa được xác nhận là token/style của bộ final. Không ánh xạ bóng đổ lịch sử như giá trị đã được áp dụng; cần bổ sung hoặc xác nhận các mức elevation trên Figma trước khi chốt.
+| StudentPay/Elevation/0 | Không shadow | Không BoxShadow |
+| StudentPay/Elevation/1 | y2/blur8/alpha0.08 | BoxShadow(offset0/2,blurRadius8,color alpha0.08) |
+| StudentPay/Elevation/2 | y8/blur24/alpha0.18 | BoxShadow(offset0/8,blurRadius24,color alpha0.18) |
+
+Ba effect styles đã áp dụng trên Figma09/10; đây vẫn là mapping Flutter dự kiến.
 
 ## Ánh xạ component sang widget
 
@@ -66,7 +70,7 @@ Bảng này là mapping triển khai. Sự hiện diện của đủ 9 nhóm com
 3. **States:** Empty, Filled 30.000đ, Invalid chữ/trống, Saving, Error và Retry.
 4. **Interactions:** Category mặc định Ăn uống, ngày mặc định hôm nay. Preset và nút thử nhập chữ mô phỏng kịch bản. Ứng dụng thật dùng TextFormField với numeric validation, không nhận số thập phân cho VND.
 5. **Navigation:** Category tới 03; Back về 01; Lưu hợp lệ qua loading tới Home đã cập nhật; lỗi cho phép nhập lại.
-6. **UI constraints:** Button 52dp, target ≥48dp; bàn phím không che lưu/lỗi. Hộp lỗi hiện chưa được xác nhận dùng Open overlay trong Figma.
+6. **UI constraints:** Button 52dp, target ≥48dp; bàn phím không che lưu/lỗi. Save empty/invalid hiện dùng OVERLAY; Retry vàscrim CLOSE vềform gốc. Đã kiểm tra graph, chưa chạyPresent.
 
 ## Màn hình 03 — Category
 
@@ -124,11 +128,11 @@ Bảng này là mapping triển khai. Sự hiện diện của đủ 9 nhóm com
 
 ## Điều kiện trước khi triển khai
 
-Chốt responsive 412dp, overlay thật, elevation và bộ component states trong Figma. Handoff mô tả đề xuất Flutter, không chứng minh đã có backend, nhập tự do, screen reader hoặc kiểm thử bàn phím.
+Đã sửa responsive360/412, overlay, elevation vàcomponentstates trênFigma09/10. Còn nghiệm thuPresent/nội dungdài vàquyềnxem. Handoff mô tả đề xuất Flutter, không chứng minh đã có backend, nhập tự do, screen reader hoặc kiểm thử bàn phím.
 
 
 ## Bổ sung đặc tả sau AI critique — 08/10/2026
 
-Theo [AI critique mới](../ai/critique-2026-10-08.md), cần chốt tab labels 14/20, Empty có CTA/route, overlay thật, elevation và responsive. [Implementation plan](../design/implementation-plan.md) cung cấp bảng 360/412 và mapping elevation đề xuất. Đây là hợp đồng triển khai, chưa phải thay đổi Figma đã chạy.
+Theo [AI critique mới](../ai/critique-2026-10-08.md), đã sửa UX04–08: tab14, EmptyCTA, overlay, elevation vàresponsive. [Change ledger](../design/figma-changes-2026-10-09.md) ghi IDs/exports; Flutter mapping vẫn là triển khai tương lai.
 
-Mỗi screen đã có 6 mục. Với Category, prototype hiện trả về form preset 30.000đ; việc giữ số tiền nhập tự do là yêu cầu ứng dụng thật. Retry trong source hiện điều hướng về form empty, chưa chứng minh đóng overlay về đúng trạng thái nền. Chỉ triển khai showDialog/AlertDialog sau khi thống nhất việc giữ hoặc reset dữ liệu.
+Mỗi screen đã có 6 mục. Với Category, prototype hiện trả về form preset 30.000đ; việc giữ số tiền nhập tự do là yêu cầu ứng dụng thật. Retry hiện dùng CLOSE để trở lại form nền, giữ trạng thái trống hoặcinvalid; chọn preset 30k để phục hồi. TrongFlutter,showDialog/AlertDialog giữcontroller dữliệu khi đóng. Cần testPresent để xác nhận trải nghiệm tương tác.

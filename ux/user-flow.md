@@ -31,13 +31,14 @@ flowchart TD
   F -->|Back| H
   F -->|Lưu hợp lệ| L[Loading]
   L --> S[01 Home saved - 1.220.000đ]
-  A -->|Lưu khi trống| E[Error dialog]
+  A -->|Lưu khi trống| E[Error overlay]
   A -->|Thử nhập bằng chữ| I[02 Add invalid]
   I -->|Lưu| E
-  E -->|Retry| A
+  E -->|Close/Retry - từ form trống| A
+  E -->|Close/Retry - từ form invalid| I
 ```
 
-Error/Retry là kịch bản đã có trong source. Scripts hiện dùng NAVIGATE tới frame lỗi; điều kiện Open overlay thật còn cần sửa/kiểm tra trực tiếp. Category hiện trả về form preset; không coi là chứng minh giữ dữ liệu nhập tự do.
+Ngày 09/10 đã đổi Saveerror sang OVERLAY; Retry/scrim CLOSE vềform gốc. Source scripts04/10 là lịch sử trước thay đổi. GraphAPI xác nhận liên kết, còn chạyPresent. Category hiện trả về form preset; không coi là chứng minh giữ dữ liệu nhập tự do.
 
 ## Flow 2 — Xem chi tiêu theo danh mục
 
@@ -53,6 +54,9 @@ flowchart TD
   T -->|Back| A
   R -->|Back| A
   D -->|Back| A
+  A -->|Tháng9 - nhánh không có dữ liệu| E[Analytics Empty]
+  E -->|Tháng10| A
+  E -->|Thêm chi tiêu| F[02 Add empty]
 ```
 
 Chart có dòng danh mục bằng chữ/số tiền để người dùng không chỉ dựa vào màu hoặc vùng chạm nhỏ.

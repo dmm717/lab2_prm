@@ -165,3 +165,8 @@ Rà soát ảnh ngày 08/10 cho thấy liên kết before/after trong log cũ b�
 Đã thực hiện một lượt Codex critique mới dựa trên ảnh thật và source trong cuộc trò chuyện hiện tại. Output có tám phát hiện gắn màn hình, căn cứ UX và quyết định: [critique-2026-10-08.md](critique-2026-10-08.md). [Evidence record](critique-evidence-2026-10-08.json) lưu hash ảnh và phạm vi đã kiểm tra. Đây là phản hồi AI mới, không phải lời xác nhận về GPT-4o/Stitch lịch sử. Chưa có thao tác Figma mới trong lượt này.
 
 [Prompt Stitch đủ persona/task/platform/constraints/style](stitch-prompt-next.md) đã chuẩn bị nhưng **chưa chạy**. Giữ nguyên prompt cũ và trạng thái lịch sử ba refine chưa xác minh.
+
+
+## Follow-up thực tế09/10/2026
+
+Đã thực hiện chuỗi critique UX04–UX08 → quyết định → thay đổi trên Figma. [Change ledger](../design/figma-changes-2026-10-09.md) ghi IDs, states, overlay và responsive. Ảnh cũ của critique giữ nguyên hash; ảnh mới nằm trong assets/figma/2026-10-09. Sửa hình học content: lề16 tương ứng328 tại360,380 tại412. Phần trạng thái chưa áp dụng trong bảng ngày08/10 là lịch sử ở thời điểm critique, được thay thế bằng follow-up này. Đây không phải phiên Stitch mới và không xác nhận provenance của ba refine cũ.

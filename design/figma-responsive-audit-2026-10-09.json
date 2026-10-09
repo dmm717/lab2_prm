@@ -1,0 +1,454 @@
+{
+  "date": "2026-10-09",
+  "pages": [
+    {
+      "id": "0:1",
+      "name": "01. User Flow"
+    },
+    {
+      "id": "1:2",
+      "name": "02. Wireframe"
+    },
+    {
+      "id": "1:3",
+      "name": "03. Final UI"
+    },
+    {
+      "id": "1:4",
+      "name": "04. Design System"
+    },
+    {
+      "id": "1:5",
+      "name": "05. Components"
+    },
+    {
+      "id": "1:6",
+      "name": "06. Prototype"
+    }
+  ],
+  "frames": [
+    {
+      "id": "59:2",
+      "name": "Lab2 / 01 Home",
+      "w": 360,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 360,
+      "padding": 16,
+      "innerWidth": 328,
+      "instanceCount": 8,
+      "grid": [],
+      "controls": [
+        {
+          "id": "59:47",
+          "w": 328,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "59:49",
+      "name": "Lab2 / 02 Add expense",
+      "w": 360,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 360,
+      "padding": 16,
+      "innerWidth": 328,
+      "instanceCount": 10,
+      "grid": [],
+      "controls": [
+        {
+          "id": "59:72",
+          "w": 328,
+          "h": 52
+        },
+        {
+          "id": "59:74",
+          "w": 328,
+          "h": 52
+        },
+        {
+          "id": "59:76",
+          "w": 328,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "59:78",
+      "name": "Lab2 / 03 Category",
+      "w": 360,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 360,
+      "padding": 16,
+      "innerWidth": 328,
+      "instanceCount": 5,
+      "grid": [
+        [
+          {
+            "width": 101.33333587646484,
+            "sizing": "FILL"
+          },
+          {
+            "width": 101.33332824707031,
+            "sizing": "FILL"
+          },
+          {
+            "width": 101.33332824707031,
+            "sizing": "FILL"
+          }
+        ],
+        [
+          {
+            "width": 101.33333587646484,
+            "sizing": "FILL"
+          },
+          {
+            "width": 101.33332824707031,
+            "sizing": "FILL"
+          },
+          {
+            "width": 101.33332824707031,
+            "sizing": "FILL"
+          }
+        ],
+        [
+          {
+            "width": 101.33333587646484,
+            "sizing": "FILL"
+          },
+          {
+            "width": 101.33332824707031,
+            "sizing": "FILL"
+          },
+          {
+            "width": 101.33332824707031,
+            "sizing": "FILL"
+          }
+        ]
+      ],
+      "controls": [
+        {
+          "id": "59:119",
+          "w": 328,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "59:121",
+      "name": "Lab2 / 04 Analytics",
+      "w": 360,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 360,
+      "padding": 16,
+      "innerWidth": 328,
+      "instanceCount": 7,
+      "grid": [],
+      "controls": []
+    },
+    {
+      "id": "59:160",
+      "name": "Lab2 / 05 Transactions",
+      "w": 360,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 360,
+      "padding": 16,
+      "innerWidth": 328,
+      "instanceCount": 9,
+      "grid": [],
+      "controls": [
+        {
+          "id": "59:200",
+          "w": 328,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "59:202",
+      "name": "Lab2 / 06 Split bills",
+      "w": 360,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 360,
+      "padding": 16,
+      "innerWidth": 328,
+      "instanceCount": 7,
+      "grid": [],
+      "controls": [
+        {
+          "id": "59:234",
+          "w": 328,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "59:236",
+      "name": "Lab2 / 07 Create bill",
+      "w": 360,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 360,
+      "padding": 16,
+      "innerWidth": 328,
+      "instanceCount": 10,
+      "grid": [],
+      "controls": [
+        {
+          "id": "59:275",
+          "w": 328,
+          "h": 52
+        },
+        {
+          "id": "59:277",
+          "w": 328,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "59:279",
+      "name": "Lab2 / 08 Bill detail",
+      "w": 360,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 360,
+      "padding": 16,
+      "innerWidth": 328,
+      "instanceCount": 7,
+      "grid": [],
+      "controls": [
+        {
+          "id": "59:318",
+          "w": 328,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "144:333",
+      "name": "QA 412 / Lab2 / 01 Home",
+      "w": 412,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 412,
+      "padding": 16,
+      "innerWidth": 380,
+      "instanceCount": 8,
+      "grid": [],
+      "controls": [
+        {
+          "id": "144:349",
+          "w": 380,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "144:411",
+      "name": "QA 412 / Lab2 / 02 Add expense",
+      "w": 412,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 412,
+      "padding": 16,
+      "innerWidth": 380,
+      "instanceCount": 10,
+      "grid": [],
+      "controls": [
+        {
+          "id": "144:418",
+          "w": 380,
+          "h": 52
+        },
+        {
+          "id": "144:419",
+          "w": 380,
+          "h": 52
+        },
+        {
+          "id": "144:423",
+          "w": 380,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "144:456",
+      "name": "QA 412 / Lab2 / 03 Category",
+      "w": 412,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 412,
+      "padding": 16,
+      "innerWidth": 380,
+      "instanceCount": 5,
+      "grid": [
+        [
+          {
+            "width": 118.66666412353516,
+            "sizing": "FILL"
+          },
+          {
+            "width": 118.66667175292969,
+            "sizing": "FILL"
+          },
+          {
+            "width": 118.66667175292969,
+            "sizing": "FILL"
+          }
+        ],
+        [
+          {
+            "width": 118.66666412353516,
+            "sizing": "FILL"
+          },
+          {
+            "width": 118.66667175292969,
+            "sizing": "FILL"
+          },
+          {
+            "width": 118.66667175292969,
+            "sizing": "FILL"
+          }
+        ],
+        [
+          {
+            "width": 118.66666412353516,
+            "sizing": "FILL"
+          },
+          {
+            "width": 118.66667175292969,
+            "sizing": "FILL"
+          },
+          {
+            "width": 118.66667175292969,
+            "sizing": "FILL"
+          }
+        ]
+      ],
+      "controls": [
+        {
+          "id": "144:492",
+          "w": 380,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "144:508",
+      "name": "QA 412 / Lab2 / 04 Analytics",
+      "w": 412,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 412,
+      "padding": 16,
+      "innerWidth": 380,
+      "instanceCount": 7,
+      "grid": [],
+      "controls": []
+    },
+    {
+      "id": "144:573",
+      "name": "QA 412 / Lab2 / 05 Transactions",
+      "w": 412,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 412,
+      "padding": 16,
+      "innerWidth": 380,
+      "instanceCount": 9,
+      "grid": [],
+      "controls": [
+        {
+          "id": "144:587",
+          "w": 380,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "144:643",
+      "name": "QA 412 / Lab2 / 06 Split bills",
+      "w": 412,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 412,
+      "padding": 16,
+      "innerWidth": 380,
+      "instanceCount": 7,
+      "grid": [],
+      "controls": [
+        {
+          "id": "144:654",
+          "w": 380,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "144:701",
+      "name": "QA 412 / Lab2 / 07 Create bill",
+      "w": 412,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 412,
+      "padding": 16,
+      "innerWidth": 380,
+      "instanceCount": 10,
+      "grid": [],
+      "controls": [
+        {
+          "id": "144:710",
+          "w": 380,
+          "h": 52
+        },
+        {
+          "id": "144:714",
+          "w": 380,
+          "h": 52
+        }
+      ]
+    },
+    {
+      "id": "144:756",
+      "name": "QA 412 / Lab2 / 08 Bill detail",
+      "w": 412,
+      "h": 800,
+      "minText": 14,
+      "contentWidth": 412,
+      "padding": 16,
+      "innerWidth": 380,
+      "instanceCount": 7,
+      "grid": [],
+      "controls": [
+        {
+          "id": "144:773",
+          "w": 380,
+          "h": 52
+        }
+      ]
+    }
+  ],
+  "effectStyles": [
+    {
+      "id": "S:5edbc8c549d4ef09293ed9e6f8525c01b0a355ba,",
+      "name": "StudentPay/Elevation/0"
+    },
+    {
+      "id": "S:f1248bd8b7bcfe8fdd7d6ffc7042b338d7a507a1,",
+      "name": "StudentPay/Elevation/1"
+    },
+    {
+      "id": "S:1081954273a329868f91834ae5d5cac52bc47989,",
+      "name": "StudentPay/Elevation/2"
+    }
+  ],
+  "verification": "Native screenshots of 8 final frames at 360 and 412 inspected; preset data only, no long-content or Present test"
+}

@@ -1,8 +1,8 @@
 {
-  "design_id": "DAHXcJ7UCg4",
-  "title": "StudentPay Lab2 — Cập nhật AI critique và handoff — Nhân & Huy",
-  "edit_url": "https://www.canva.com/d/AlTG9tXBXXjYb8F",
-  "view_url": "https://www.canva.com/d/dqcJ31Mb8VFHZoj",
+  "design_id": "DAHXfBV49EQ",
+  "title": "StudentPay Lab2 — Bản cuối cập nhật Figma 09-10-2026",
+  "edit_url": "https://www.canva.com/d/Kp4_AiORPJfXWPo",
+  "view_url": "https://www.canva.com/d/mC_Pc-gV0F3Q2Ud",
   "pages": 12,
   "width": 1280,
   "height": 720,
@@ -14,7 +14,9 @@
   "three_refine_prompts": true,
   "both_students": true,
   "two_mapping_tables": true,
-  "new_ai_critique": "ai/critique-2026-10-08.md, 8 findings; 5 shown on slide6",
-  "source_visual_qa": "12 authored layouts inspected; no predicted text overflow",
-  "canva_visual_qa": "Browser permission check blocked; final editor render not directly inspected"
+  "new_ai_critique": "ai/critique-2026-10-08.md; UX04–UX08 Figma changes implemented2026-10-09",
+  "figma_evidence": "20 actual new PNGs,8final360,8QA412,Empty,Overlay,Components,Elevation",
+  "source_visual_qa": "12 source layouts inspected; no predicted text overflow",
+  "canva_visual_qa": "Final editor render not directly inspected; browser permission check blocked",
+  "canva_content_verified": true
 }

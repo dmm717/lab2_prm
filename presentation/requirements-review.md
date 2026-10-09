@@ -1,38 +1,22 @@
-# Đối chiếu bản Canva cuối với Word
+# Đối chiếu Canva cuối với Word — 09/10/2026
 
-Đã đọc toàn bộ `C:\Users\Admin\Downloads\PRM323_Lab2_HuongDan_Slide_Presentation_Demo.docx` và tài liệu source ngày 08/10/2026. Word là hướng dẫn dựa trên đề Lab2; đề gốc không có trong workspace. Nội dung Word được dùng làm tiêu chí đối chiếu.
+Đã đọc toàn bộ PRM323_Lab2_HuongDan_Slide_Presentation_Demo.docx. Word là hướng dẫn dựa trên đề Lab2; đề gốc không có trong workspace. Nội dung tài liệu được dùng làm tiêu chí đối chiếu yêu cầu của người dùng.
 
-| Slide | Yêu cầu trong Word | Bản cuối và giới hạn minh chứng |
+| Slide | Yêu cầu trong Word | Nội dung và giới hạn minh chứng |
 |---|---|---|
-| 01 | Product, đối tượng, thành viên/vai trò, vấn đề, links | StudentPay, sinh viên ở trọ, Nhân SE192336 và Huy SE192382, phạm vi nhóm, Figma/GitHub. Chưa có phân công cá nhân để tự ghi vai trò từng người. |
-| 02 | Persona, pain points, problem statement, success criteria | Quân 20 tuổi, ba vấn đề, statement, mục tiêu 3 chạm/dưới 10 giây. Chưa có usability test. |
-| 03 | IA/sitemap, navigation, ít nhất 8 màn hình | Sơ đồ phân cấp Home/Activity/Groups, đủ 8 screen. Tab You là trang phụ. |
-| 04 | 3 sơ đồ flow, start/goal/end, alternate, error recovery, screen map | Ba chuỗi node/arrow có số màn hình, nhánh Error/Retry, chọn chart/dòng và chia 3/4 người. |
-| 05 | Prompt nguyên văn có persona/task/mobile/constraints/style, UI đầu ra | Trích prompt trên slide, toàn bộ trong notes và ảnh AI thật. Prompt lịch sử thiếu VND/360–412/accessibility, được ghi rõ. |
-| 06 | Ít nhất 3 refine khác mục tiêu, trước/sau, ít nhất 5 UX issues cụ thể | Ba cặp ảnh CTA/Thu Chi/Empty, 5 issues gắn màn hình, 3 prompt trong notes. Đã có lượt Codex AI critique mới8 phát hiện, 5 hiển thị trên slide. Lịch sử3refine vẫn chưa xác thực, critique mẫu cũ không giả làm phản hồi nguyên văn. |
-| 07 | 3–5 quyết định Accept/Modify/Reject có căn cứ | Năm quyết định với lý do gắn persona, heuristic và phạm vi. |
-| 08 | Wireframe/final, hierarchy/consistency/states, đủ 8 UI | Tám export Figma thật và cặp Add wireframe/final. Loading/Error/Result có ảnh. Empty chưa chứng minh được áp dụng đầy đủ. |
-| 09 | Color/type/spacing/radius/elevation, variables/styles, instances | Giá trị token thật, số variable/style từ audit, bảng 9 nhóm/states. Elevation và đầy đủ masters/states/instances cần kiểm tra trực tiếp. |
-| 10 | Contrast, target 48, text 14, 360/412, không chỉ màu | Contrast sRGB, 360×800, button 52/Back 48, body 16/caption 14. 412 chưa kiểm tra, tab label 11 dưới ngưỡng. |
-| 11 | Prototype 3 flow, Back, overlay, loading/result, không dead ends | Ảnh Error/Loading/Result, link prototype, demo 5 phút trong notes. Scripts dùng NAVIGATE, chưa xác nhận Open overlay hoặc chạy lại live. |
-| 12 | 6 phần/screen, 2 bảng mapping, kết quả/giới hạn/links | Hai bảng Token→Flutter và Component→Widget, ví dụ screen 02 đủ 6 phần, links và giới hạn. Full handoff đủ 8 screen trong repo. |
+| 01 | Product, đối tượng, thành viên/vai trò, links | StudentPay, sinh viên ở trọ, Nhân SE192336/Huy SE192382 và phạm vi nhóm. Chưa có vai trò cá nhân. |
+| 02 | Persona, pains, problem, success criteria | Quân 20 tuổi, ba pain points, problem statement, mục tiêu 3 chạm/dưới 10 giây. Chưa có usability test. |
+| 03 | IA/navigation, ít nhất 8 screens | Sitemap ba khu vực, đủ 8 screen; You là trang phụ. |
+| 04 | Ba flow, start/goal/end, alternate/error/recovery, screen map | Ba sơ đồ node/arrow có nhánh error overlay, chọn chart/dòng và chia 3/4 người. |
+| 05 | Prompt nguyên văn, persona/task/mobile/constraints/style, Stitch output | Prompt lịch sử và ảnh có sẵn; full prompt trong notes. Prompt cũ thiếu VND/360–412/accessibility. Prompt mới đầy đủ đã chuẩn bị, chưa chạy; nguồn phiên Stitch chưa xác thực. |
+| 06 | Ít nhất 3 refine khác mục tiêu, before/after, ít nhất 5 issues | Ba cặp ảnh CTA/Thu Chi/Empty và ba prompt trong notes. Critique Codex mới có 8 issues, 5 trên slide. Chưa xác thực lịch sử ba phiên refine. |
+| 07 | 3–5 quyết định Accept/Modify/Reject có lý do | Năm quyết định gắn với persona, heuristic và scope. |
+| 08 | Wireframe/final, hierarchy/consistency/states, ít nhất 8 UI | Tám PNG final mới, cặp Add wireframe/final; Empty CTA/Error overlay/Loading result có node và ảnh thật. |
+| 09 | Tokens/type/spacing/radius/elevation, styles/variables, instances | 39 foundation + 2 prototype variables, 6 text styles, 3 effect styles; chín nhóm master/showcase. Budget card dùng instance trên Home. |
+| 10 | Contrast, target 48, text 14, 360/412, không chỉ màu | Tám UI mỗi width, lề 16/content 328–380, min text 14, CTA 52/Back 48. Tám cặp màu chữ và viền input 3.87:1. Chưa test nội dung dài/toàn bộ UI. |
+| 11 | Ba live flow, Back, overlay, loading/result, không dead ends | Graph có 3 starting points, 95 NODE navigation và 2 CLOSE; Save OVERLAY/Retry CLOSE, Empty CTA. Chưa nghiệm thu tương tác trong Present. |
+| 12 | Sáu phần/screen, hai mapping tables, kết quả/giới hạn/links | Tám handoff, mỗi screen đủ sáu phần; hai bảng Token→Flutter và Component→Widget trên slide và repo. |
 
-## Những điều kiện Lab2 cần xác nhận ngoài slide
+Đã sửa Figma trực tiếp và xem ảnh native của tám UI360/tám QA412. Có 20 PNG mới kèm node/hash. Graph kiểm tra đích, starting points và recovery; không thay thế chạy Present. Đã rà 12 bố cục nguồn slide, không phát hiện overflow, và đọc lại nội dung/12 notes trên Canva. Metadata import là `unknown`; chưa visual QA editor vì browser permissions. [Canva](canva-link.md). [Thay đổi Figma](../design/figma-changes-2026-10-09.md).
 
-- Đúng 6 pages: 01 User Flow, 02 Wireframe, 03 Final UI, 04 Design System, 05 Components, 06 Prototype. Dialog/state không cộng thành screen thứ 9.
-- Kiểm tra thật 360/412dp, text ≥14sp, contrast từng control, elevation, 9 nhóm component/states và instances/variables/Auto Layout.
-- Chạy 3 flow, Back, error/recovery, Open overlay, loading/result và mọi đường thoát.
-- Xác thực prompt/output/critique/decision/Figma change từ lịch sử AI nếu còn.
-- Đề gốc cá nhân, làm nhóm chỉ khi giảng viên cho phép. Tên môn Word PRM323 khác Figma PRM393.
-- Nộp GitHub + Figma có quyền xem, README và assets. Không cần Flutter code. Slides không có điểm rubric riêng và hướng dẫn không yêu cầu nộp slide riêng.
-
-## Phạm vi kiểm tra đã làm
-
-Đã đọc Word/source, rà soát 12 bố cục nguồn tĩnh và không phát hiện text vượt vùng dự kiến. Đã đọc lại nội dung, 12 notes và page count trên Canva. Bản cuối có 12 trang 1280×720, text tách thành các đối tượng để giữ ngắt dòng. Metadata của bản HTML nhập là `unknown`; không khẳng định preset Presentation.
-
-Chưa kiểm tra hình hiển thị cuối trong editor Canva hoặc Figma trực tiếp: trình duyệt không xác minh được quyền truy cập đã lưu, nên dừng và không vượt qua kiểm tra này. Kết nối Canva vẫn cho phép tạo và đọc nội dung. Preview local là render bố cục nguồn, không phải Canva export. Không nâng các mục thiếu minh chứng thành Pass.
-
-
-## Bổ sung sau lượt hoàn thiện
-
-Có AI critique thực tế mới và record hash ảnh. Có prompt Stitch đầy đủ đã chuẩn bị nhưng chưa chạy. Đã sửa sơ đồ UX để mô tả preset/Back/alternate/error đúng source; đã kiểm tra handoff 8 screen đủ 6 phần. Implementation plan là đặc tả sửa, không phải minh chứng Figma đã đổi. Link Canva mới xem canva-link.md.
+Còn cần chạy Present và test nội dung dài/bàn phím; kiểm tra quyền xem Figma của người ngoài; xác thực lịch sử Stitch/ba refine nếu còn phiên gốc. Hai tên đúng, nhưng vai trò cá nhân, PRM323/PRM393 và giảng viên cho phép nhóm chưa được xác nhận. Bài nộp GitHub + Figma có quyền xem. Word không yêu cầu Flutter code/APK; slides không có điểm rubric riêng.

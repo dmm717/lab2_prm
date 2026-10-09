@@ -1,0 +1,1415 @@
+{
+  "date": "2026-10-09",
+  "fileKey": "C7FiWYzVXUS8G2cnK5AGos",
+  "start": [
+    {
+      "nodeId": "65:2",
+      "name": "Flow 1 · Thêm chi tiêu + lỗi"
+    },
+    {
+      "nodeId": "119:778",
+      "name": "Flow 2 · Thống kê tháng"
+    },
+    {
+      "nodeId": "65:203",
+      "name": "Flow 3 · Chia 300.000 đ / 3 người"
+    }
+  ],
+  "frames": [
+    {
+      "id": "65:2",
+      "name": "Prototype / 01 Home",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:22",
+          "name": "Add",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:321",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I96:1229;44:2020",
+          "name": "Tab/Groups",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1229;44:2024",
+          "name": "Tab/Activity",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1229;44:2028",
+          "name": "Tab/You",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "96:1134",
+          "w": 86,
+          "h": 49
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:50",
+      "name": "Prototype / 02 Add expense",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:59",
+          "name": "Category",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:79",
+          "w": 324,
+          "h": 80
+        },
+        {
+          "node": "65:64",
+          "name": "Invalid demo",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:353",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I82:387;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "65:66",
+          "name": "Save",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:433",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:79",
+      "name": "Prototype / 03 Category",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:89",
+          "name": "Category/Ăn uống",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:89",
+          "name": "Category/Ăn uống",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:89",
+          "name": "Category/Ăn uống",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:92",
+          "name": "Category/Nhà trọ",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:92",
+          "name": "Category/Nhà trọ",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:92",
+          "name": "Category/Nhà trọ",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:95",
+          "name": "Category/Di chuyển",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:95",
+          "name": "Category/Di chuyển",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:95",
+          "name": "Category/Di chuyển",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:99",
+          "name": "Category/Mua sắm",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:99",
+          "name": "Category/Mua sắm",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:99",
+          "name": "Category/Mua sắm",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:102",
+          "name": "Category/Học tập",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:102",
+          "name": "Category/Học tập",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:102",
+          "name": "Category/Học tập",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:105",
+          "name": "Category/Giải trí",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:105",
+          "name": "Category/Giải trí",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:105",
+          "name": "Category/Giải trí",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:109",
+          "name": "Category/Sức khỏe",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:109",
+          "name": "Category/Sức khỏe",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:109",
+          "name": "Category/Sức khỏe",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:112",
+          "name": "Category/Hóa đơn",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:112",
+          "name": "Category/Hóa đơn",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:112",
+          "name": "Category/Hóa đơn",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:115",
+          "name": "Category/Khác",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:115",
+          "name": "Category/Khác",
+          "trigger": "ON_CLICK",
+          "type": "SET_VARIABLE",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "65:115",
+          "name": "Category/Khác",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 100,
+          "h": 100
+        },
+        {
+          "node": "I82:421;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "65:120",
+          "name": "Done",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:122",
+      "name": "Prototype / 04 Analytics",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:128",
+          "name": "Month",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "144:1855",
+          "w": 324,
+          "h": 80
+        },
+        {
+          "node": "65:135",
+          "name": "Ellipse",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:161",
+          "w": 152,
+          "h": 152
+        },
+        {
+          "node": "65:136",
+          "name": "Ellipse",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:300",
+          "w": 152,
+          "h": 152
+        },
+        {
+          "node": "65:137",
+          "name": "Ellipse",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:345",
+          "w": 152,
+          "h": 152
+        },
+        {
+          "node": "65:139",
+          "name": "Food analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:161",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "65:140",
+          "name": "Rent analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:300",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "65:141",
+          "name": "Transit analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:345",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I96:1261;44:2036",
+          "name": "Tab/Home",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1261;44:2040",
+          "name": "Tab/Groups",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1261;44:2048",
+          "name": "Tab/You",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "96:1134",
+          "w": 86,
+          "h": 49
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:161",
+      "name": "Prototype / 05 Transactions",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I82:493;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "65:179",
+          "name": "Analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:203",
+      "name": "Prototype / 06 Split bills",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:215",
+          "name": "Bill",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:280",
+          "w": 324,
+          "h": 80
+        },
+        {
+          "node": "65:216",
+          "name": "Electric bill",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:393",
+          "w": 324,
+          "h": 80
+        },
+        {
+          "node": "65:218",
+          "name": "Create",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:237",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I96:1291;95:64",
+          "name": "Tab/Home",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1291;95:72",
+          "name": "Tab/Activity",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1291;95:76",
+          "name": "Tab/You",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "96:1134",
+          "w": 86,
+          "h": 49
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:237",
+      "name": "Prototype / 07 Create bill",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:252",
+          "name": "Add friend",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:447",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I82:602;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "65:254",
+          "name": "Confirm",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:437",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:280",
+      "name": "Prototype / 08 Bill detail",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I82:627;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "65:301",
+          "name": "Remind",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:441",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:321",
+      "name": "Prototype / Add empty",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:330",
+          "name": "Category",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:79",
+          "w": 324,
+          "h": 80
+        },
+        {
+          "node": "65:334",
+          "name": "Quick amount",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "65:335",
+          "name": "Invalid demo",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:353",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I82:647;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "65:337",
+          "name": "Save",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "OVERLAY",
+          "target": "144:1841",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:353",
+      "name": "Prototype / Add invalid",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:362",
+          "name": "Category",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:79",
+          "w": 324,
+          "h": 80
+        },
+        {
+          "node": "65:366",
+          "name": "Quick amount",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:50",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I82:681;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "65:369",
+          "name": "Save",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "OVERLAY",
+          "target": "144:1841",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:385",
+      "name": "Prototype / Expense saved",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:405",
+          "name": "Add",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:321",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I96:1341;44:2016",
+          "name": "Tab/Home",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1341;44:2020",
+          "name": "Tab/Groups",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1341;44:2024",
+          "name": "Tab/Activity",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1341;44:2028",
+          "name": "Tab/You",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "96:1134",
+          "w": 86,
+          "h": 49
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:433",
+      "name": "Prototype / Saving expense",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:433",
+          "name": "Prototype / Saving expense",
+          "trigger": "AFTER_TIMEOUT",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "69:308",
+          "w": 360,
+          "h": 800
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:437",
+      "name": "Prototype / Saving bill",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:437",
+          "name": "Prototype / Saving bill",
+          "trigger": "AFTER_TIMEOUT",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "69:318",
+          "w": 360,
+          "h": 800
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:441",
+      "name": "Prototype / Reminder preview",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:445",
+          "name": "Done",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:280",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:447",
+      "name": "Prototype / Add friend",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "65:451",
+          "name": "Done",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:453",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "65:453",
+      "name": "Prototype / Bill four members",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I82:822;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "65:470",
+          "name": "Confirm",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:286",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "66:229",
+      "name": "Reference / Amount error before overlay",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I69:296;67:6",
+          "name": "Retry",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:321",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "66:238",
+      "name": "Prototype / Bill four detail",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I82:857;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "66:259",
+          "name": "Remind",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:292",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "66:286",
+      "name": "Prototype / Saving bill four",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "66:286",
+          "name": "Prototype / Saving bill four",
+          "trigger": "AFTER_TIMEOUT",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "69:328",
+          "w": 360,
+          "h": 800
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "66:292",
+      "name": "Prototype / Reminder four",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "66:296",
+          "name": "Done",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:238",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "66:300",
+      "name": "Prototype / History Rent",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I82:898;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "66:318",
+          "name": "Analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "66:345",
+      "name": "Prototype / History Transit",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I82:931;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "66:363",
+          "name": "Analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "66:393",
+      "name": "Prototype / Electricity detail",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I82:964;44:2005",
+          "name": "Back",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "node": "66:414",
+          "name": "Remind",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:435",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "66:435",
+      "name": "Prototype / Electricity reminder",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "66:439",
+          "name": "Done",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:393",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "69:308",
+      "name": "Prototype / Saving expense · spinning",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "69:308",
+          "name": "Prototype / Saving expense · spinning",
+          "trigger": "AFTER_TIMEOUT",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:385",
+          "w": 360,
+          "h": 800
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "69:318",
+      "name": "Prototype / Saving bill · spinning",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "69:318",
+          "name": "Prototype / Saving bill · spinning",
+          "trigger": "AFTER_TIMEOUT",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:280",
+          "w": 360,
+          "h": 800
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "69:328",
+      "name": "Prototype / Saving bill four · spinning",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "69:328",
+          "name": "Prototype / Saving bill four · spinning",
+          "trigger": "AFTER_TIMEOUT",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:238",
+          "w": 360,
+          "h": 800
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "96:1134",
+      "name": "Prototype / Profile",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "I96:1375;95:84",
+          "name": "Tab/Home",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1375;95:88",
+          "name": "Tab/Groups",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I96:1375;95:92",
+          "name": "Tab/Activity",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "119:778",
+          "w": 86,
+          "h": 49
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "119:778",
+      "name": "Prototype / Analytics entrance",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "119:778",
+          "name": "Prototype / Analytics entrance",
+          "trigger": "AFTER_TIMEOUT",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:122",
+          "w": 360,
+          "h": 800
+        },
+        {
+          "node": "119:787",
+          "name": "Ellipse",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:161",
+          "w": 134,
+          "h": 134
+        },
+        {
+          "node": "119:788",
+          "name": "Ellipse",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:300",
+          "w": 134,
+          "h": 134
+        },
+        {
+          "node": "119:789",
+          "name": "Ellipse",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:345",
+          "w": 134,
+          "h": 134
+        },
+        {
+          "node": "119:791",
+          "name": "Food analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:161",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "119:792",
+          "name": "Rent analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:300",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "119:793",
+          "name": "Transit analytics",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "66:345",
+          "w": 324,
+          "h": 52
+        },
+        {
+          "node": "I119:796;44:2036",
+          "name": "Tab/Home",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I119:796;44:2040",
+          "name": "Tab/Groups",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I119:796;44:2048",
+          "name": "Tab/You",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "96:1134",
+          "w": 86,
+          "h": 49
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "144:1841",
+      "name": "Prototype / Amount error overlay",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "144:1842",
+          "name": "Dismiss background",
+          "trigger": "ON_CLICK",
+          "type": "CLOSE",
+          "w": 360,
+          "h": 800
+        },
+        {
+          "node": "I144:1843;67:6",
+          "name": "Retry",
+          "trigger": "ON_CLICK",
+          "type": "CLOSE",
+          "w": 324,
+          "h": 52
+        }
+      ],
+      "smallText": []
+    },
+    {
+      "id": "144:1855",
+      "name": "Prototype / Analytics empty",
+      "w": 360,
+      "h": 800,
+      "reactions": [
+        {
+          "node": "144:1857",
+          "name": "Month",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:122",
+          "w": 324,
+          "h": 80
+        },
+        {
+          "node": "I144:1921;143:78",
+          "name": "StudentPay/Lab2 Button",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:321",
+          "w": 296,
+          "h": 52
+        },
+        {
+          "node": "I144:1873;44:2036",
+          "name": "Tab/Home",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:2",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I144:1873;44:2040",
+          "name": "Tab/Groups",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "65:203",
+          "w": 86,
+          "h": 49
+        },
+        {
+          "node": "I144:1873;44:2048",
+          "name": "Tab/You",
+          "trigger": "ON_CLICK",
+          "type": "NODE",
+          "nav": "NAVIGATE",
+          "target": "96:1134",
+          "w": 86,
+          "h": 49
+        }
+      ],
+      "smallText": []
+    }
+  ],
+  "overlay": "144:1841",
+  "empty": "144:1855",
+  "referenceFrames": [
+    "66:229"
+  ],
+  "verification": "Plugin API structure and native node screenshots; Present not interactively tested"
+}

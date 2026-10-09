@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-09",
+  "source": "Figma node screenshot API; original evidence preserved",
+  "files": [
+    {
+      "path": "assets/figma/2026-10-09/01-home-360.png",
+      "nodeId": "59:2",
+      "width": 360,
+      "height": 800,
+      "sha256": "0b44a564746800605fabf0e45f5a1b9e04d852a4a013f0c83deef491dfc5062d"
+    },
+    {
+      "path": "assets/figma/2026-10-09/02-add-expense-360.png",
+      "nodeId": "59:49",
+      "width": 360,
+      "height": 800,
+      "sha256": "6551cd83f29e690d43654c730420df6f7bc6a7c75a2288bb0e72d674eed257ae"
+    },
+    {
+      "path": "assets/figma/2026-10-09/03-category-360.png",
+      "nodeId": "59:78",
+      "width": 360,
+      "height": 800,
+      "sha256": "9908c324a9057c61c38bf3812af3552b2bee8459bb32e1853d60f9400457b6ec"
+    },
+    {
+      "path": "assets/figma/2026-10-09/04-analytics-360.png",
+      "nodeId": "59:121",
+      "width": 360,
+      "height": 800,
+      "sha256": "0e18625ea195e212cdec399390872e2ac96831f59d5896ca527975f531775a63"
+    },
+    {
+      "path": "assets/figma/2026-10-09/05-transactions-360.png",
+      "nodeId": "59:160",
+      "width": 360,
+      "height": 800,
+      "sha256": "cd555471cbc2357964fd011f408db76cb178c5f88d8ebb93cd894bd5da541577"
+    },
+    {
+      "path": "assets/figma/2026-10-09/06-split-bills-360.png",
+      "nodeId": "59:202",
+      "width": 360,
+      "height": 800,
+      "sha256": "ac92d5bc14484c0af5df899b3c8d51f10ebe863bf6dcd15f80f6d74c08668648"
+    },
+    {
+      "path": "assets/figma/2026-10-09/07-create-bill-360.png",
+      "nodeId": "59:236",
+      "width": 360,
+      "height": 800,
+      "sha256": "fec972006b1e8e2856a37343b0f948bd9bc1c317b1559060c6a8985de355dedd"
+    },
+    {
+      "path": "assets/figma/2026-10-09/08-bill-detail-360.png",
+      "nodeId": "59:279",
+      "width": 360,
+      "height": 800,
+      "sha256": "9b486e3edc1f0ea3ebd50a00788ece6e8f3acefb659b172662c1eb416ea7ead1"
+    },
+    {
+      "path": "assets/figma/2026-10-09/01-home-412.png",
+      "nodeId": "144:333",
+      "width": 412,
+      "height": 800,
+      "sha256": "fc395df695a95b838b54d389c8acb73856ebc6cae89e9e0bae08ef407f57248a"
+    },
+    {
+      "path": "assets/figma/2026-10-09/02-add-expense-412.png",
+      "nodeId": "144:411",
+      "width": 412,
+      "height": 800,
+      "sha256": "dba8735e33369273bcbd4d4ad801e7560d82b7ff0c2f3b14f49cfbf43c2de97e"
+    },
+    {
+      "path": "assets/figma/2026-10-09/03-category-412.png",
+      "nodeId": "144:456",
+      "width": 412,
+      "height": 800,
+      "sha256": "7463ecdf44814cef499d42f39c4e34ab14100ed4ada5dddae64d05dede3f7f0b"
+    },
+    {
+      "path": "assets/figma/2026-10-09/04-analytics-412.png",
+      "nodeId": "144:508",
+      "width": 412,
+      "height": 800,
+      "sha256": "490b3648a7a5f7ccb0d54b33fd675e2af4cbc034df185a577bc82d9274ecbd69"
+    },
+    {
+      "path": "assets/figma/2026-10-09/05-transactions-412.png",
+      "nodeId": "144:573",
+      "width": 412,
+      "height": 800,
+      "sha256": "89f91e55657d21a9c3c4de7175380fffc83f02f34db6f6ca01025842b4196466"
+    },
+    {
+      "path": "assets/figma/2026-10-09/06-split-bills-412.png",
+      "nodeId": "144:643",
+      "width": 412,
+      "height": 800,
+      "sha256": "f3331659cbc424614267af0933aac20083bb80a340c17db5de57e37b85ff955f"
+    },
+    {
+      "path": "assets/figma/2026-10-09/07-create-bill-412.png",
+      "nodeId": "144:701",
+      "width": 412,
+      "height": 800,
+      "sha256": "8e124d5a072cf1035a37b24869ae53cdf4259b83583d299de4be1cfaf66df503"
+    },
+    {
+      "path": "assets/figma/2026-10-09/08-bill-detail-412.png",
+      "nodeId": "144:756",
+      "width": 412,
+      "height": 800,
+      "sha256": "91fa503bc46794411c857ca82c9d97fd503dfbfb745bd741fd9cf622c3af6330"
+    },
+    {
+      "path": "assets/figma/2026-10-09/09-empty-analytics.png",
+      "nodeId": "144:1855",
+      "width": 360,
+      "height": 800,
+      "sha256": "a87d3f915394b2e20bbf90ea957eeeae0ed8e6137d7f102ad961fec8fa2dd6b3"
+    },
+    {
+      "path": "assets/figma/2026-10-09/10-amount-error-overlay.png",
+      "nodeId": "144:1841",
+      "width": 360,
+      "height": 800,
+      "sha256": "1f0dd9384779d9db7638979e299bed3bb9a57b38b20ca76f6b3c8a4797264792"
+    },
+    {
+      "path": "assets/figma/2026-10-09/11-components-nine-families.png",
+      "nodeId": "144:1934",
+      "width": 390,
+      "height": 1415,
+      "sha256": "3a9a975701321ba0966397f5a5c9c9af80f3f0e46fac096fb7ca53c292928dc2"
+    },
+    {
+      "path": "assets/figma/2026-10-09/12-elevation-styles.png",
+      "nodeId": "144:1998",
+      "width": 460,
+      "height": 384,
+      "sha256": "244a8eedc7cadf8380e761a9a7f4ead24f1cbcf43202d9310e2de910df6a3ae8"
+    }
+  ]
+}
